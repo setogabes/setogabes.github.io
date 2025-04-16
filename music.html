@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoMusic</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+           body {
+                background-image: url(images/tilebg.png);
+           }
+
+            @font-face {
+                font-family: 'VCR_OSD';
+                font-weight: 400;
+                src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+            }
+
+            @font-face {
+                font-family: 'VCR_OSDneue';
+                font-weight: 400;
+                src: url(fonts/VCR_OSDneue.woff2) format(woff2);
+                src: url(fonts/VCR_OSDneue.woff) format(woff);
+            }
+
+            p.Titles {
+                font-family: 'VCR_OSD';
+                text-align: center;
+                font-size: xx-large;
+                font-weight: bold;
+            }
+
+            p {
+                font-family: 'VCR_OSD';
+                text-align: center;
+                font-size: larger;
+            }
+
+            iframe {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            iframe.feat {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+
+            }
+
+            .flex-container a img {
+                transition: transform .2s;
+            }
+
+            .flex-container a img:hover {
+                transform:scale(1.2);
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .left {
+                flex: 50%;
+            }
+
+            .right {
+                flex: 50%;
+                flex-wrap: wrap;
+            }
+
+            .ft {
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .navrow {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 80px;
+                padding-right: 80px;
+                align-items: center;
+
+            }
+
+            .navleft {
+                flex: 50%;
+            }
+
+            .navright {
+                flex: 50%;
+                display: flex;
+                gap: 20px;
+                justify-content: flex-end;
+                height: 15px;
+            }
+
+            .navright a {
+                font-family: 'VCR_OSD';
+                color: black;
+                text-decoration: none;
+                background-color: rgb(187, 187, 187);
+            }
+
+            .navright a:hover {
+                color: red;
+                
+            }
+
+            .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+        .burger-menu {
+            display: none;
+            font-family: 'VCR_OSD';
+            font-size: 100%;
+            justify-content: center;
+        }
+
+        .burger-menu-btn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center, center left 50 px;
+            
+        }
+
+        /* MOBILE VERSION */
+
+        @media only screen and (max-width: 1200px) {
+
+            body {
+                overflow: visible;
+            }
+
+            .burger-menu-btn {
+                display: block;
+                float: right;
+                margin-top: 25px;
+                width: 45px;
+                height: 45px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center, center left 50px;
+            }
+
+            .burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 100px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+            .scrollable-place { 
+  height: 1000px; 
+} 
+
+.remove-scrolling { 
+  height: 100%; 
+  overflow: hidden; 
+} 
+
+            .burger-menu ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .burger-menu ul li {
+            display: block;
+            padding-bottom: 60px;
+            text-align: right;
+            padding-right: 20px;
+            font-size: 250%;
+        }
+
+        .burger-menu ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+          .navrow {
+                display: block;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+
+            }
+
+            p.Titles {
+
+            }
+
+            p {
+                margin-left: 12%;
+                margin-right: 12%;
+            }
+
+            .flex-container {
+                display: flex;
+                gap: 5%;
+                flex-wrap: wrap;
+                margin-left: 16%;
+                margin-right: 16%;
+
+            }
+
+            .flex-container a img:hover {
+                transform:scale(1);
+            }
+
+            .row {
+                display: block;
+                
+            }
+
+            .left {
+              
+            }
+
+            .right {
+                flex: 50%;
+                flex-wrap: wrap;
+            }
+
+            .iframe {
+display: flex;
+max-width: fit-content;
+align-items: center;
+padding-left: 0%;
+padding-bottom: 20px;
+
+            }
+
+            .ft {
+                display: block
+            }
+
+            div.navi {
+
+            padding-top: 15%;
+
+        }
+
+        
+
+        }
+
+        </style>
+    </head>
+    <body>
+
+
+
+        <!--burger menu start-->
+
+        <nav class="burger-menu">
+            <ul>
+            <li><a href="#" style="color: rgb(100, 100, 100);">Music</a></li>
+            <li><a href="dance.html"">Dance</a></li>
+            <li><a href="artworks.html">Artworks</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="extras.html">Extras</a></li>
+
+
+        </ul>
+        </nav>
+
+        <!--burger menu end-->
+
+        <div class="navrow">
+            <div class="navleft">
+
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+
+        </div>
+
+
+
+        <div class="navright">
+
+            <a href="#" style="color: grey;">Music</a>
+            <a href="dance.html"">Dance</a>
+            <a href="artworks.html">Artworks</a>
+            <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="extras.html">Extras</a>
+
+
+        </div>
+    </div>
+
+        <p class="Titles">Available at:</p>
+
+        <div class="flex-container">
+            <div><a href="https://open.spotify.com/intl-pt/artist/4Q8xTUj7IVVjFuxrAYo6pJ?si=t8dt1fZjR1mnh3x6VFDIhg" target="_blank"><img src="images/spotify_logo.png" alt="Spotify" style="width: 70px;"></a></div>
+            <div><a href="https://youtube.com/@setogabes" target="_blank"><img src="images/youtube_logo.png" alt="YouTube Channel" style="width: 70px;"></a></div>
+            <div><a href="#"><img src="images/apple_music_logo.png" alt="Apple Music" style="width: 70px;"></a></div>
+            <div><a href="#"><img src="images/deezer_logo.png" alt="Deezer" style="width: 70px;"></a></div>
+            <div><a href="#"><img src="images/tidal_logo.png" alt="Tidal" style="width: 70px;"></a></div>
+        </div>
+
+        <p style="font-family: 'VCR_OSDneue';"> And many more streaming platforms around the globe! </p>
+
+        <div class="row">
+            <div class="left">
+
+                <p class="Titles">Latest Release</p>
+                <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/rfM-aBD7gAw?si=804GodVojZYT1Fhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+                <iframe class="iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1sma5OtH5Qohw2nQei6cf2?utm_source=generator" width="565px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+            </div>
+            <div class="right">
+
+                <p class="Titles">Features</p>
+
+                <div class="ft">
+
+                <iframe class="feats" style="border-radius:11px" src="https://open.spotify.com/embed/track/4KpCv85Km2Uwbxio9cP61H?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe class="feats" style="border-radius:12px" src="https://open.spotify.com/embed/track/0TnG1Jl8WRYfDlqVqurgOP?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe class="feats" style="border-radius:12px" src="https://open.spotify.com/embed/track/14FAvfTNrzZyUJV7ztKtgd?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe class="feats" style="border-radius:12px" src="https://open.spotify.com/embed/track/3RbOD5DUIHpQlXYIvcE9II?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe class="feats" style="border-radius:12px" src="https://open.spotify.com/embed/track/3FQhwObrAgMxl1k8jZFmJj?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0fYNFBGyy2OO2LyhJSwTx9?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+            </div>
+
+            </div>
+        </div>
+
+        <div class="navi">
+            <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+            </div> 
+
+        <div class="footer">
+            <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+        Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+    </div>
+
+<script src="/js/main.js"></script>
+
+    </body>
+</html>

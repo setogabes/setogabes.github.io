@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoArt</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+
+
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+ 
+             img {
+                 display: block;
+                 width: 300px;
+             }
+ 
+             .navrow {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 80px;
+                padding-right: 80px;
+                align-items: center;
+            }
+
+            .navleft {
+                flex: 50%;
+            }
+
+            .navright {
+                flex: 50%;
+                display: flex;
+                gap: 20px;
+                justify-content: flex-end;
+                height: 15px;
+            }
+
+            .navright a {
+                font-family: 'VCR_OSD';
+                color: black;
+                text-decoration: none;
+                background-color: rgb(187, 187, 187);
+            }
+
+            .navright a:hover {
+                color: red;
+                
+            }
+ 
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+
+             @font-face {
+                font-family: 'VCR_OSDneue';
+                font-weight: 400;
+                src: url(fonts/VCR_OSDneue.woff2) format(woff2);
+                src: url(fonts/VCR_OSDneue.woff) format(woff);
+            }
+ 
+             span {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+
+             }
+
+             .container{
+                width: 90%;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 5%;
+                padding-top: 1%;
+             }
+
+             .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-gap: 10px
+             }
+
+             .gallery img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1;
+             }
+
+             .gallery img:hover {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+             }
+             
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+        .header {
+            display: none;
+        }
+
+        .burger-menu {
+            display: none;
+        }
+
+                        /* MOBILE VERSION */
+
+@media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+}
+
+.gallery img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 0;
+             }
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+p.Titles {
+
+}
+
+p {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.flex-container {
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-left: 16%;
+    margin-right: 16%;
+
+}
+
+.flex-container a img:hover {
+    transform:scale(1);
+}
+
+.row {
+    display: block;
+    
+}
+
+.left {
+  
+}
+
+.right {
+
+}
+
+div.navi {
+
+padding-top: 15%;
+
+}
+                }
+         
+         </style>
+     </head>
+     <link rel="stylesheet" href="lightbox.css">
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                        <li><a href="music.html">Music</a></li>
+                        <li><a href="dance.html">Dance</a></li>
+                        <li><a href="#" style="color: rgb(100, 100, 100);">Artworks</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="extras.html">Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+
+        <div class="navrow">
+            <div class="navleft">
+
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+
+        </div>
+
+        <div class="navright">
+
+            <a href="music.html">Music</a>
+            <a href="dance.html">Dance</a>
+            <a href="#" style="color: grey;>Artworks"> Artworks</a>
+            <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="extras.html">Extras</a>
+        </div>
+    </div>
+
+             <p style="font-family: 'VCR_OSDneue';"><span>Gallery</span><br>
+                To see more, follow my art studio on <a href="https://instagram.com/ninkyostudio" target="_blank">Instagram</a> and <a href="https://ninkyostudio.bsky.social" target="_blank">Bluesky</a></p>
+
+             <div class="container">
+                <div class="gallery">
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/072/682/451/large/ninkyo-studio-ninkyo-veio-foda-20240211014723.jpg?1707948272" data-lightbox="Artworks" data-title="Everyone Is Someone">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/072/682/451/large/ninkyo-studio-ninkyo-veio-foda-20240211014723.jpg?1707948272" alt="Everyone Is Someone">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/072/681/689/large/ninkyo-studio-shallwelove-20240205081055-2.jpg?1707946361" data-lightbox="Artworks" data-title="Shall we love?">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/072/681/689/large/ninkyo-studio-shallwelove-20240205081055-2.jpg?1707946361" alt="Shall we love?">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/770/489/large/ninkyo-studio-ninkyo-rooftop-gangster.jpg?1705923437" data-lightbox="Artworks" data-title="Rooftop Gangster">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/770/489/large/ninkyo-studio-ninkyo-rooftop-gangster.jpg?1705923437" alt="Rooftop Gangster">
+                    </a>
+
+                    <a href="https://cdna.artstation.com/p/assets/images/images/071/770/642/large/ninkyo-studio-fhzc-okxeaab46w.jpg?1705923797" data-lightbox="Artworks" data-title="Brooklyn's Very Own: Miles Morales">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/071/770/642/large/ninkyo-studio-fhzc-okxeaab46w.jpg?1705923797" alt="Brooklyn's Very Own: Miles Morales">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/772/035/large/ninkyo-studio-ninkyo-andre3k.jpg?1705926000" data-lightbox="Artworks" data-title="What's cooler than being cool?">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/772/035/large/ninkyo-studio-ninkyo-andre3k.jpg?1705926000" alt="What's cooler than being cool?">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/772/141/large/ninkyo-studio-f2ja55mwiaagjcp.jpg?1705926138" data-lightbox="Artworks" data-title="Just guys being dudes">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/772/141/large/ninkyo-studio-f2ja55mwiaagjcp.jpg?1705926138" alt="Just guys being dudes">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/770/709/large/ninkyo-studio-ninkyo-self-portrait-2022.jpg?1705923977" data-lightbox="Artworks" data-title="setoGabes (2022 Self Portrait)">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/770/709/large/ninkyo-studio-ninkyo-self-portrait-2022.jpg?1705923977" alt="setoGabes (2022 Self Portrait)">
+                    </a>
+
+                    <a href="https://cdna.artstation.com/p/assets/images/images/071/770/758/large/ninkyo-studio-fic9o-zwyaevvyc.jpg?1705924108" data-lightbox="Artworks" data-title="The One and Only: Richarlison">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/071/770/758/large/ninkyo-studio-fic9o-zwyaevvyc.jpg?1705924108" alt="The One and Only: Richarlison">
+                    </a>
+
+                    <a href="https://cdna.artstation.com/p/assets/images/images/071/770/816/large/ninkyo-studio-ninkyo-loverev21.jpg?1705924246" data-lightbox="Artworks" data-title="Love Revolution '21">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/071/770/816/large/ninkyo-studio-ninkyo-loverev21.jpg?1705924246" alt="Love Revolution '21">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/771/655/large/ninkyo-studio-ninkyo-stay-back.jpg?1705925460" data-lightbox="Artworks" data-title="Stay Back">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/771/655/large/ninkyo-studio-ninkyo-stay-back.jpg?1705925460" alt="Stay Back">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/771/787/large/ninkyo-studio-ninkyo-briefcase.jpg?1705925666" data-lightbox="Artworks" data-title="Blend In">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/771/787/large/ninkyo-studio-ninkyo-briefcase.jpg?1705925666" alt="Blend In">
+                    </a>
+
+                    <a href="https://cdnb.artstation.com/p/assets/images/images/071/771/863/large/ninkyo-studio-ninkyo-explaining.jpg?1705925790" data-lightbox="Artworks" data-title="Mob Ties">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/071/771/863/large/ninkyo-studio-ninkyo-explaining.jpg?1705925790" alt="Mob Ties">
+                    </a>
+                    
+                </div>
+             </div>
+
+             <div class="navi">
+                <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+                </div> 
+
+             <div class="footer">
+                <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+            Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+        </div>
+
+<script src="lightbox-plus-jquery.js"></script>
+<script src="/js/main.js"></script>
+
+            </body>
+ </html>

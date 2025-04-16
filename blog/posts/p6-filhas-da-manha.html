@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@setogabes">
+        <meta name="twitter:title" content="setoBlog: Filhas da Manhã">
+        <meta name="twitter:description" content="Ser fã é bom demais mano...
+        20.02.24">
+        <meta name="twitter:image" content="https://setogabes.neocities.org/images/cardthumb.png">
+
+        <title>setoPost: Filhas da Manhã</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(/images/tilebg.png);
+             }
+ 
+             @font-face {
+              font-family: 'Gabesfont-Regular';
+                font-weight: 400;
+                src: url(/fonts/Gabesfont-Regular.ttf) format(woff2);
+             }
+
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(/fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(/fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+
+             img.gapspace {
+              width: 2px;
+                          }
+
+             div.toplogo {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            }
+
+            img.setoblog {
+            width: 350px;
+           }
+
+          .goback:hover {
+            opacity: 25%;
+          }
+
+          .goback .icoback {
+            width: 50px;
+            float: inline-start;
+            padding-right: 0%;
+          }
+
+          .goback p {
+           max-width: fit-content;
+           font-family: 'VCR_OSD';
+           font-size: medium;
+           font-weight: 600;
+           float: inline-start;
+           padding-left: 0%;
+           margin: 0%;
+           margin-top: 20px;
+           margin-left: 5px;
+          }
+           
+
+           h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 350%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 120%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin: 0%;
+            padding-left: 5%;
+            padding-bottom: 5px;
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           p {
+            font-family: "Gabesfont-Regular";
+            font-size: 190%;
+            color: rgb(0, 0, 0);
+            padding-left: 5%;
+            padding-right: 5%;
+           }
+
+           .post {
+            display: grid;
+            background-color: whitesmoke;
+            margin: auto;
+            max-width: 50%;
+          }
+          
+          .imgpost {
+            max-width: 100%;
+          }
+
+          .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+          img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+
+            }
+
+            p.footertext {
+              font-family: 'VCR_OSD';
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            #disqus_thread {
+              display: block;
+              padding-left: 2%;
+              padding-right: 2%;
+              padding-bottom: 2%;
+              padding-top: 2%;
+              margin: auto;
+              margin-left: 25%;
+              margin-right: 25%;
+              background-color: whitesmoke;
+            }
+.burger-menu {
+  display: none;
+}
+
+.header {
+  display: none;
+}
+
+.Nomomento{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.Nomomento p {
+  font-family: 'VCR_OSD';
+  color: whitesmoke;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.Nomomento p a {
+  font-family: 'VCR_OSD';
+  color: rgb(202, 26, 26);
+  font-size: 15px;
+}
+
+.imgpost {
+
+}
+
+
+
+                    /* MOBILE VERSION */
+
+                    @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+img.icoback {
+display: flex;
+}
+
+img.setoblog {
+display: none;
+}
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+font-weight: lighter;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+
+            h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 200%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-left: 5%;
+            padding-bottom: 5px;
+
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           .post {
+            justify-self: center;
+            min-width: 90%;
+           }
+
+           #disqus_thread {
+            display: block;
+            justify-content: center;
+            margin: auto;
+            max-width: 86%;
+            background-color: whitesmoke;
+            }
+
+            #gapspace {
+              width: 10px;
+            }
+
+            .Nomomento{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.Nomomento p {
+  font-family: 'VCR_OSD';
+  color: whitesmoke;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.Nomomento p a {
+  font-family: 'VCR_OSD';
+  color: rgb(202, 26, 26);
+  font-size: 15px;
+}
+
+.imgpost {
+
+}
+
+iframe {
+  max-width: 300px;
+  max-height: 169px;
+}
+
+          }
+
+         </style>
+        </head>
+
+        <div class="header">
+          <a href="index.html"><img src="/images/setoblog_logo.png" alt="setoGabes" style="width: 170px; margin-top: 15px;"></a>
+          <div class="burger-menu-btn"></div>
+      </div>
+  
+                  <!--burger menu start-->
+  
+                  <nav class="burger-menu">
+                      <ul>
+                          <li><a href="/music.html">Music</a></li>
+                          <li><a href="/dance.html">Dance</a></li>
+                          <li><a href="/artworks.html">Artworks</a></li>
+                          <li><a href="/about.html">About</a></li>
+                          <li><a href="/press.html">Press</a></li>
+                          <li><a href="/extras.html">Back to Extras</a></li>
+          
+          
+                  </ul>
+                  </nav>
+          
+                  <!--burger menu end-->
+
+        <body>
+
+          <div class="toplogo">
+            <a href="/blog/home.html" title="Blog's Homepage"><img class="setoblog" src="/images/setoblog_logo.png" alt="setoBlog"></a>
+         </div>
+
+          <div class="post">
+
+            <span class="goback">
+            <a href="/blog/home.html" title="Back to Extras"><img class="icoback" src="/images/icoback.png" alt="Back to Extras"><p>Return</p></a>
+
+          </span>
+
+          <header> 
+            <h2>FILHAS DA MANHÃ</h2>
+            <h3>Ser fã é bom demais mano...</h3>
+            <h4>20.02.24</h4>
+          </header>
+            
+            <p>
+              Na moral, eu não sabia o quão bom era ser fã de algo. <br>
+              Já fui fã de artistas e grupos por aí, mas nunca naquela intensidade dos meus amigos. Foi assim com Bigbang, Block B, etc. Via meus chegados no twitter ficando TÃO felizes, e eu só curtindo em níveis normais. Achei que era coisa minha, mas aí em 2021, no meio do período fudido da quarentena, minha vida mudou completamente quando vi esse fatídico vídeo:
+              </p>
+              <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe src="https://geo.dailymotion.com/player.html?video=x2m7j8v"
+                  style="width:85%; height:85%; position:absolute; left:40px; top:0px; overflow:hidden; border:none;"
+                  allowfullscreen
+                  title="Dailymotion Video Player"
+                  allow="web-share">
+                </iframe>
+              </div>
+
+              <p>
+              Desde então minha vida se dividiu entre os períodos A.M.M (Antes de Morning Musume) e P.M.M (Pós Morning Musume). <br>
+              Eu nem conhecia o grupo, nunca tinha ouvido nenhuma música delas, mas esse episódio do programa de TV que elas tinham me conquistou. Ali eu quis assistir mais e mais episódios, ouvir as músicas, conhecer as membros e por aí vai. <br>
+              E agora eu posso dize4r com tranquilidade: Eu entendo. <br>
+              A felicidade que eu via minhas amigas tendo com grupos de kpop, eu passei a ter também. Eu me tornei uma daquelas pessoas que olha uma foto de um integrante e sorri automaticamente. Esse post está sendo escrito pois vi um trecho de um show delas e fiquei TÃO FELIZ, que quis expressar isso num post! <br>
+              <br>
+              Vai tomar no cu, eu amo Morning Musume demais, fico muito feliz vendo qualquer coisa delas!!!!! Eventualmente eu vou acabar postando mais sobre, não tem como, virou parte importante da minha vida, eu amo minhas menina, eu amo o fato de que eu chamo elas assim mesmo ciente de que todas as que eu gosto hoje tem idade pra ser minha mãe, eu nunca me canso de ouvir as músicas, porra, eu comecei a aprender japonês por causa desse grupo, sabe?? <br>
+              Como é o caso de muitos grupos no J-Pop, o Momusu é um grupo com sistema de graduação. Isso significa que quando alguém quer sair do grupo, a pessoa se gradua. Ao invés de sair brigado e deixar um climão, a saída é celebrada. Tem sempre um show de despedida, com um figurino especial escolhido pela integrante, muitas vezes um single especial feito por ela/pra ela, discursos, choros, agradecimentos, enfim, é uma festa! <br>
+              E depois que as pessoas saem do grupo, são abertas audições, onde novas membros vão ser escolhidas. As calouras da geração anterior, agora são veteranas que cuidam das mais novas, e assim nasce uma nova geração de integrantes do grupo. <br>
+              O Morning Musume existe desde 1997, e atualmente estamos na 17ª geração. Na época da gravação do vídeo que me apresentou o grupo, estávamos na 6ª geração. Em 2021, boa parte do conteúdo legendado de Morning Musume daquela época, já havia se perdido na internet em meio à varias plataformas falindo, tretas de copyright e links quebrados. Então eu comecei a aprender o idioma pra consumir mais daquilo que me deixava tão feliz. Esse é o quanto eu amo esse grupo. <br>
+              <br>
+              Espero, de coração, que algum dia eu tenha a oportunidade de ir em algum show delas. Principalmente num dos shows de aniversário, onde as membros antigas fazem participações especiais! <br>
+              <br>
+
+<img class="imgpost" src="https://iili.io/JEQHGxS.jpg" alt=""> <br>
+<br>
+              
+              Acho que se eu pudesse ver o sorrisinho da Risa ao vivo, eu seria físicamente incapaz de ficar triste por uns bons meses aí. Sei lá mano, ser fã é bom demais...<br>
+
+              <!--Se tiver iamgem, colocar na classe .imgpost pra encaixar no mobile tbm-->
+            </p> 
+
+            <div class="Nomomento">
+              
+              <p><span style="font-size: 20px;">No momento:</span> <br> <br>
+                ⦿ De coração extremamente quentinho <br>
+                ⦿ Ouvindo em loop a versão ao vivo de 2008 de <a href="https://www.youtube.com/watch?v=AXQGYaW-jg4">Go Girl ~Koi no Victory~</a> <br>
+                ⦿ Prestes a devorar um pacote de bolacha, pois hoje eu mereço <br>
+
+
+          </div>
+
+        <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+
+          </div>
+
+          <img class="gapspace" src="/images/placeholder.png" alt="">
+          
+<!-- begin disqus -->
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://setogabes-mod.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<!-- end disqus -->
+ 
+
+          <div class="footer">
+            <p class="footertext"><img class="parental" style= "opacity:70%;" src="/images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+        Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script id="dsq-count-scr" src="//setogabes-mod.disqus.com/count.js" async></script>
+
+        </body>
+ </html>

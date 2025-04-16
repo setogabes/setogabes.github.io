@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoGabes</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                background-color: rgb(134, 11, 36);
+            }
+
+            @font-face {
+                font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+            }
+
+            .deskimg {
+                display: flex;
+                justify-content: center;
+                width: 150px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 15%;
+            }
+
+            p.links {
+                font-family: "VCR_OSD";
+                text-align: center;
+                font-size: 105%;
+                display: flex
+                align-content: center;
+            }
+
+            p.links :hover {
+                text-decoration: none;
+                color: rgb(199, 93, 93);
+            }
+
+            .moblinks {
+                display: none;
+            }
+
+            p {
+                font-family: "VCR_OSD";
+                text-align: center;
+                font-size: medium;
+                font-weight: 50;
+            }
+
+            p a {
+                display: no;
+                text-decoration: none;
+                color: whitesmoke;
+            }
+
+            .mobimg {
+                display: none;
+            }
+
+            .mobtitle {
+                display: none;
+            }
+
+                                   /* MOBILE VERSION */
+
+                                   @media only screen and (max-width: 1200px) {
+                  
+            
+            .deskimg {
+                display: none;
+            }
+
+            .desktitle {
+                display: none;
+            }
+
+            p.links {
+                display: none;
+            }
+
+            .mobimg{
+display: block;
+width: 30%;
+padding-left: 0;
+padding-right: 0;
+padding-top: 10%;
+padding-bottom: 4%;
+margin: auto;
+            }
+
+            .mobtitle{
+                display: block;
+                padding-left: 0;
+padding-right: 0;
+padding-top: 0%;
+padding-bottom: 6%;
+                margin: auto;
+                
+            }
+
+            .moblinks {
+                display: block;
+                padding: 0 0 0 0;
+                margin: auto;
+                text-align: center;
+            }
+
+            .moblinks ul {
+                list-style: none;
+font-family: 'VCR_OSD';
+font-size: 30px;
+padding: 0 0 0 0;
+                margin: auto;
+                
+            }
+
+            .moblinks ul li {
+padding-bottom: 25px;
+            }
+
+            .moblinks ul li a {
+                text-decoration: none;
+color: black;
+background-color: rgb(170, 170, 170);
+display: block;
+margin-left: 10%;
+margin-right: 10%;
+
+
+            }
+            
+
+            p {
+                font-family: "VCR_OSD";
+                text-align: center;
+                font-size: medium;
+                font-weight: 50;
+            }
+
+            p a {
+                text-decoration: none;
+                color: black;
+            }
+
+        }
+
+                                   
+        </style>
+    </head>
+    <body>
+
+        <img class="deskimg" src="images/alt_logo_setoGabes.png" alt="setogabes logo">
+
+        <p class="links" style="font-weight: bold;"><a href="music.html">Music</a> + <a href="dance.html">Dance</a> + <a href="artworks.html">Artworks</a> + <a href="about.html">About</a> + <a href="press.html">Press</a> + <a href="extras.html">Extras</a> </p>
+
+        <p class="desktitle">EVERYONE IS SOMEONE</p>
+
+        <img class="mobimg" src="images/alt_logo_setoGabes.png" alt="setogabes logo">
+
+        <p class="mobtitle">EVERYONE IS SOMEONE</p>
+
+        <div class="moblinks">
+            <ul>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="dance.html">Dance</a></li>
+            <li><a href="artworks.html">Artworks</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="extras.html">Extras</a></li>
+        </ul>
+    </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoPhotos</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+ 
+             img.icoback {
+                width: 3%;
+            }
+
+            img.icoback:hover {
+                width: 3%;
+                opacity: 25%;
+            }
+
+            img.coverart {
+                max-width: 9%;
+                object-fit: contain;
+            }
+ 
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+ 
+             div.Titles {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: 500%;
+                 font-weight: bold;
+             }
+
+             p.section {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 250px;
+                 padding-right: 250px;
+                 padding-top: 10px;
+             }
+
+             .container{
+                width: 90%;
+                min-height: 50vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 5%;
+             }
+
+             .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                grid-gap: 10px
+             }
+
+             .gallery img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1;
+             }
+
+             .gallery img:hover {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 1;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+             }
+
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+        .text {
+            display: block;
+        }
+
+        .header {
+            display: none;
+        }
+
+        .burger-menu {
+            display: none;
+        }
+
+        .mobtext {
+display: none;
+}
+
+
+                                /* MOBILE VERSION */
+
+@media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+font-weight: lighter;
+}
+
+.gallery img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 0;
+             }
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+p.Titles {
+
+}
+
+p {
+    font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 0px;
+                 padding-right: 0px;
+                 padding-top: 10px;
+}
+
+.flex-container {
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-left: 0%;
+    margin-right: 0%;
+
+}
+
+.flex-container a img:hover {
+    transform:scale(1);
+}
+
+.row {
+    display: none;
+    
+}
+
+.left {
+  
+}
+
+.right {
+
+}
+
+div.navi {
+
+padding-top: 15%;
+
+}
+
+.text {
+    display: none
+}
+
+.mobtext {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+img.icoback {
+            display: none;
+        }
+
+        
+                }
+         
+         </style>
+     </head>
+     <link rel="stylesheet" href="lightbox.css">
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                            <li><a href="/music.html">Music</a></li>
+                            <li><a href="/dance.html">Dance</a></li>
+                            <li><a href="/artworks.html">Artworks</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/press.html">Press</a></li>
+                            <li><a href="/extras.html">Back to Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+ 
+            <a href="extras.html" title="Back to Extras"><img class="icoback" src="images/icoback.png" alt="Back to Extras"></a>
+ 
+             <p class="text"> <span style="font-family: 'VCR_OSD'; text-align: center; font-size: 500%; font-weight: bold;">Photography</span><br>
+                <br>
+                <span style="font-size: medium;">I like to take photos sometimes. No fancy cameras or anything, all pictures taken directly from my phone (Samsung Galaxy Note 20 Ultra), edited mostly on the stock Galaxy Photo Editor and maybe Photoshop.</span></p>        
+
+                <p class="mobtext"> <span style="font-family: 'VCR_OSD'; text-align: center; font-size: 200%; font-weight: bold;">Photography</span><br>
+                    <br>
+                    <span >I like to take photos sometimes. No fancy cameras or anything, all pictures taken directly from my phone (Samsung Galaxy Note 20 Ultra), edited mostly on the stock Galaxy Photo Editor and maybe Photoshop.</span></p>
+                
+                <div class="container">
+                    <div class="gallery">
+
+                        <a href="https://iili.io/JlTnuQn.jpg" data-lightbox="Artworks" data-title="bigcarstation.jpg">
+                            <img src="https://iili.io/JlTnuQn.jpg" alt="bigcarstation.jpg">
+                        </a>
+
+                        <a href="https://iili.io/JlTna24.jpg" data-lightbox="Artworks" data-title="bigcarstation2.jpg">
+                            <img src="https://iili.io/JlTna24.jpg" alt="bigcarstation2.jpg">
+                        </a>
+    
+                        <a href="https://iili.io/JlTnRBs.jpg" data-lightbox="Artworks" data-title="saintnicholas.jpg">
+                            <img src="https://iili.io/JlTnRBs.jpg" alt="saintnicholas.jpg">
+                        </a>
+    
+                        <a href="https://iili.io/JlTnIIt.jpg" data-lightbox="Artworks" data-title="rodagigante.jpg">
+                            <img src="https://iili.io/JlTnIIt.jpg" alt="rodagigante.jpg">
+                        </a>
+                        
+                    </div>
+                 </div>
+
+                 <div class="navi">
+                    <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+                    </div> 
+
+                 <div class="footer">
+                    <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+                Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+            </div>
+
+    <script src="lightbox-plus-jquery.js"></script>
+    <script src="/js/main.js"></script>
+
+
+            </body>
+ </html>

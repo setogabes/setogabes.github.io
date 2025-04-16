@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@setogabes">
+        <meta name="twitter:title" content="setoBlog">
+        <meta name="twitter:description" content="setogabes setoblog">
+        <meta name="twitter:image" content="https://setogabes.neocities.org/images/cardthumb.png">
+        
+        <title>setoBlog: Página 2</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <style>
+            body {
+                background-image: url(/images/tilebg.png);
+            }
+
+            @font-face {
+                font-family: 'Gabesfont-Regular';
+                font-weight: 400;
+                src: url(/fonts/Gabesfont-Regular.ttf) format(woff2);
+            }
+
+            @font-face {
+                font-family: 'VCR_OSD';
+                font-weight: 400;
+                src: url(/fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                src: url(/fonts/vcr_osd_mono-webfont.woff) format(woff);
+            }
+
+            p {
+                font-family: "Gabesfont-Regular";
+                background-position: center;
+                text-align: left;
+                font-size: 160%;
+                font-weight: 500;
+                padding-bottom: 2%;
+                padding-top: 1%;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+
+        div.post {
+             display: flex;
+             justify-content: center;
+             max-width: 100%;
+        }
+
+        div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 4%;
+            gap: 5em;
+        }
+
+        div.toplogo {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 1%;
+            padding-top: 1%;
+        }
+
+        img.setoblog {
+            width: 350px;
+        }
+
+        img.prevlink {
+            opacity: 0.3;
+        }
+
+        img.nextlink {
+            opacity: 0.3;
+        }
+
+        img.icoback {
+                width: 3%;
+            }
+
+        img.icotop {
+            width: 80px;
+        }
+
+            img.icoback:hover {
+                width: 3%;
+                opacity: 25%;
+            }
+
+        img.imgpost {
+                max-width: 99%;
+            }
+
+            .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                font-family: 'Gabesfont-Regular';
+                 text-align: center;
+                 font-size: larger;
+                 background:none;
+                padding-bottom: 0%;
+                font-size: 17px;
+            }
+
+            .column {
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 30px;
+                justify-content: center;
+            }
+
+            .left {
+                flex: 50%;
+                max-width: fit-content;
+            }
+
+            .aboutblog {
+                background-color: whitesmoke;
+                max-width: 380px;
+                padding: 2% 2% 2% 2%;
+            }
+
+            .right {
+                flex: 50%;
+                max-width: fit-content;
+
+            }
+
+            h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 350%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 120%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin: 0%;
+            padding-left: 5%;
+            padding-bottom: 5px;
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           .blog-post {
+            background-color: whitesmoke;
+            padding-bottom: 10%;
+            max-width: 800px;
+           }
+
+           .paginas {
+            margin: auto;
+            max-width: fit-content;
+            padding-bottom: 7%;
+            font-family: 'VCR_OSD';
+
+           }
+
+           .paginas a {
+        color: black;
+        padding: 10px 18px;
+        text-decoration: none;
+           }
+
+           .paginas a:hover:not(.active) {
+        background-color: #031F3B;
+        color: white;
+           }
+
+           a:nth-child(1) {
+        font-weight: bold;
+        color: rgb(175, 175, 175);
+    }
+
+           a:nth-child(2) {
+        background-color: rgb(217, 218, 217);
+        color: rgb(0, 0, 0);
+           }
+
+           a:nth-child(3) {
+        font-weight: bold;
+        color: rgb(175, 175, 175);
+
+    }
+
+    a:nth-child(4) {
+        font-weight: bold;
+        color: rgb(175, 175, 175);
+
+    }
+
+    a:nth-child(5) {
+        font-weight: bold;
+        color: rgb(175, 175, 175);
+
+    }
+
+.header {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+}
+
+                      /* MOBILE VERSION */
+
+                      @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+img.icoback {
+display: none;
+}
+
+img.setoblog {
+display: none;
+}
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+font-weight: lighter;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+            .column {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .column .left {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                padding-bottom: 20px;
+            }
+
+            .aboutblog {
+                background-color: whitesmoke;
+                max-width: 89%;
+                        }
+
+            .right {
+                flex: 50%;
+                margin-right: 16px;
+                margin-left: 16px;
+                max-width: fit-content;
+                justify-content: center;
+
+            }
+
+            h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 200%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin-left: 0px;
+            margin-right: 15px;
+            padding-left: 5%;
+            padding-bottom: 5px;
+
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           .blog-post {
+            background-color: whitesmoke;
+            justify-content: center;
+                margin: auto;
+            padding-bottom: 10%;
+           }
+        
+        }
+
+
+        </style>
+    </head>
+    
+    <body>
+
+        <div class="header">
+            <a href="index.html"><img src="/images/setoblog_logo.png" alt="setoGabes" style="width: 170px; margin-top: 15px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                            <li><a href="/music.html">Music</a></li>
+                            <li><a href="/dance.html">Dance</a></li>
+                            <li><a href="/artworks.html">Artworks</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/press.html">Press</a></li>
+                            <li><a href="/extras.html">Back to Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+
+        <a href="/extras.html" title="Back to Extras"><img class="icoback" src="/images/icoback.png" alt="Back to Extras"></a>
+
+        <div class="toplogo">
+       
+    </div>
+
+    <div class="column">
+        <div class="left">
+
+            <div class="aboutblog">
+
+            <a href="/blog/home.html" title="Blog's Homepage"><img class="setoblog" src="/images/setoblog_logo.png" alt="setoBlog"></a>
+            <p>Um blog pra eu falar o que eu quiser, quando eu quiser, sobre o que eu quiser. <br>
+            <br>
+    Todos os posts aqui são escritos com a minha caligrafia, se ficar ruim de ler, não ligo. <br>
+    <br>
+    <span style="color: whitesmoke; background-color: rgb(36, 36, 36);">For english speakers:</span> I plan to make my entire website have multiple languages, so everyone can understand what's going on. That includes this blog, but that will take some time. Until that happens, this part of the website, which is more personal, will be updated only in my native language. <br>
+<br></p>
+
+<!-- pagination elements -->
+    <div class="paginas">
+        <a href="home.html"><</a>
+        <a href="#" title="Página 2"  class="active">2</a>
+        <!--<a href="#">></a>-->
+    </div>
+        </div>
+
+        </div>
+        
+        <div class="right">
+
+<!--post 4-->
+
+<div class="blog-post">
+    
+    <header> 
+        <h2>UPDATE CANSADO</h2>
+        <h3>Sabia que eu preciso pagar pra dormir?</h3>
+        <h4>31.01.24</h4>
+      </header>
+        
+        <p style="margin-left: 2%; margin-right: 2%;">Aí, na moral, o pai tá cansado hein. <br>
+            Hoje tô sem os remédio de dormir. Tomei duas melatonina da minha namorada e se pá tomo mais algumas se não resolver. São 4h da manhã agora e eu odeio ficar acordado até tão tarde, pois já me fudi muito com isso no passado. Aprendi a não subestimar o poder que dormir bem tem sob o nosso corpo.</p>
+
+    <a href="p4-update-cansado.html"><img src="/images/leiamais.png" alt="READ MORE" style="float: right; width: 20%; padding-right: 2%;
+    padding-bottom: 2%;"></a>
+
+  <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+
+    </div>
+<!--post 4-->
+
+<div class="divisor">
+<img src="/images/placeholder.png" alt="" style="width: 3%;">
+</div>              
+
+<!--post 3-->
+
+<div class="blog-post">
+    
+    <header> 
+        <h2>MIDNIGHT CLUB 3</h2>
+        <h3>Dá um ligue nos carro do pai</h3>
+        <h4>26.01.24</h4>
+      </header>
+        
+        <p style="margin-left: 2%; margin-right: 2%;">Hoje tem muito trampo, quero mexer mais no site, mas não sei se vai rolar. Tô alternando entre as encomendas e Midnight Club 3 DUB Edition Remix. Até que não tô procrastinando tanto, ando conseguindo manter isso sob controle. Vamo ver até onde isso dura.</p>
+
+    <a href="p3-midnight-club-3.html"><img src="/images/leiamais.png" alt="READ MORE" style="float: right; width: 20%; padding-right: 2%;
+    padding-bottom: 2%;"></a>
+
+  <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+
+    </div>
+<!--post 3-->
+
+<div class="divisor">
+<img src="/images/placeholder.png" alt="" style="width: 3%;">
+</div>            
+
+<!--post 2-->
+
+            <div class="blog-post">
+    
+                <header> 
+                    <h2>TESTANDO TESTES</h2>
+                    <h3>Tô pegando o jeito aos poucos, segura aí</h3>
+                    <h4>25.01.24</h4>
+                  </header>
+                    
+                    <p style="margin-left: 2%; margin-right: 2%;">Essa fonte que eu fiz é baseada na minha caligrafia. Talvez fique ruim de ler, mas não me importo, pois essa parte do site é mais pra mim do que qualquer outra pessoa, é bem difícil que alguém queira ler isso, na real.</p>
+  
+                <a href="p2-testando-testes.html"><img src="/images/leiamais.png" alt="READ MORE" style="float: right; width: 20%; padding-right: 2%;
+                padding-bottom: 2%;"></a>
+      
+              <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+      
+                </div>
+<!--post 2-->
+
+<div class="divisor">
+    <img src="/images/placeholder.png" alt="" style="width: 3%;">
+</div>
+
+<!--post 1-->
+
+            <div class="blog-post">
+    
+              <header> 
+              <h2>PRIMEIRO POST</h2>
+              <h3>aeHOOOOOOOOOOOOOOOOOOOOOOOOOO</h3>
+              <h4>25.01.24</h4>
+            </header>
+              
+              <p style="margin-left: 2%; margin-right: 2%;">Primeiro post oficial desse blog, nesse site que ainda tô montando. Não sei no que vai dar, mas tô animado! </p> 
+
+              <a href="p1-primeiro-post.html"><img src="/images/leiamais.png" alt="READ MORE" style="float: right; width: 20%; padding-right: 2%;
+              padding-bottom: 2%;"></a>
+    
+            <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+    
+              </div>
+
+<!--post 1-->              
+
+        </div>
+
+        </div>
+       
+    <!--botôes de navegação previous page, home, next page. Classes com opacidade reduzida se referem a páginas/funções ainda inexistentes-->
+        <div class="navi">
+        <a href="#top" title="Back to Top"><img class="icotop" src="/images/icotop.png" alt="Back to Top"></a>
+        </div> 
+
+        <div class="divisor">
+            <img src="/images/placeholder.png" alt="" style="width: 3%;">
+            </div>
+
+            <div class="paginas">
+                <a href="home.html"><</a>
+                <a href="#" title="Página 2"  class="active">2</a>
+                <!--<a href="#">></a>-->
+            </div>
+
+        <div class="footer">
+            <p class="footertext"><img class="parental" style= "opacity:70%;" src="/images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+        Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+    </div>
+
+    <!--preciso arranjar um jeito de lidar com paginação, pra não virar bagunça conforme vou adicionando mais páginas, com posts dentro delas etc etc-->
+
+    <script src="/js/main.js"></script>
+
+
+    </body>
+</html>

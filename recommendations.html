@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoRecommend</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+ 
+             img.icoback {
+                width: 3%;
+            }
+
+            img.icoback:hover {
+                width: 3%;
+                opacity: 25%;
+            }
+
+            img.coverart {
+                max-width: 9%;
+                object-fit: contain;
+            }
+ 
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+ 
+             p.Titles {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: 500%;
+                 font-weight: bold;
+             }
+
+             p.section {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 250px;
+                 padding-right: 250px;
+                 padding-top: 10px;
+             }
+
+             div.recblock {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 8px;  
+                padding-bottom: 50px;
+                padding-left: 10%;
+                padding-right: 10%;
+             }
+
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-bottom: 0%;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+                padding-top: 80px;
+
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+            p{font-family: 'VCR_OSD'; text-align:center; position: relative; top: -4px;}
+    p.left{text-align:left; position: relative; top: -4px;}
+    p.down{text-align:center; position: relative; top: 3px;}
+    p.white{text-align:center; color: white;}
+    h2{text-align:center; position: relative; top: 18px;
+    }
+     h4{
+      text-align: center; 
+      color: #000000;
+      font-size: 42px;
+    }
+
+    .invert{
+      transition-duration: 0.17s;
+     }
+    .invert:hover{
+      filter: invert(100%);
+    }
+    
+    .invert2{
+      transition-duration: 0.17s;
+      filter: invert(100%);
+     }
+    .invert2:hover{
+      filter: invert(00%);
+    }
+    img.middle{
+    display: block;
+    margin-left:auto; 
+    margin-right:auto;
+    }
+    a:link {color: black; }
+    a:visited {color: black; }
+    
+    .imag {
+    animation: fadeInAnimation ease 5s
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+      
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+    .imstuff {
+        transition: transform 0.16s;
+        height: 250px;
+    }
+    .imstuff:hover{
+      -webkit-transform: rotate(0deg) translate(0px, -12px);
+    }
+    
+    
+    a.demo_img {
+		display: block;
+		width:auto;
+		position:relative;
+		line-height:25px;
+	}
+	
+	a.demo_img>div {
+		position:absolute;
+		padding:0;
+		margin:0;
+		left: -110px; /* change this value to one that works best for you */
+		top: 215px; /* change this value to one that works best for you */
+		background: transparent url(/generator/show-clickable-imge-link-on-hover_files/arrow-down-grey.png) left 23px no-repeat;
+		
+		opacity:0;
+		height: 0;
+		overflow: hidden;
+		
+		/* Enable transitions */
+		/*-webkit-transition: all .3s ease .15s;
+		-moz-transition: all .3s ease .15s;
+		-o-transition: all .3s ease .15s;
+		-ms-transition: all .3s ease .15s;
+		transition: all .3s ease .15s;*/
+	}
+	
+	a.demo_img>div img {
+		padding:8px;
+		margin-left:4px;
+		border:0px solid #BCBDC0;
+		background-color:#000000;
+		-webkit-border-radius: 5px;
+	   	   -moz-border-radius: 5px;
+		    	border-radius: 5px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	a.demo_img:hover>div {
+		
+		opacity:1;
+		width: 450px;
+		height: auto;
+		padding: 8px;
+		opacity:.95;
+		
+		z-index:1;
+	}
+	
+	a.demo_img>div p {
+		padding:8px;
+		margin-left:0px;
+		border:1px solid #b30a0a;
+		background-color:#1b1a1a;
+		-webkit-border-radius: 0px;
+	   	   -moz-border-radius: 0px;
+		    	border-radius: 0px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	/*a.demo_p:hover>div {
+		
+		opacity:1;
+		width: 600px;
+		height: 400px;
+		padding: 8px;   
+		
+		z-index:1;
+	}*/
+
+    .header {
+        display: none;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+                          /* MOBILE VERSION */
+
+                          @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+p.Titles {
+display: none;
+}
+
+p {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.flex-container a img:hover {
+    transform:scale(1);
+}
+
+.row {
+    display: block;
+    
+}
+
+.left {
+  
+}
+
+.right {
+
+    flex: 50%;
+    flex-wrap: wrap;
+}
+
+div.navi {
+
+padding-top: 15%;
+
+}
+
+img.icoback {
+            display: none;
+           }
+
+
+           /* css original pra tentar entender essa bagunça*/
+
+
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 0px;
+                 padding-right: 0px;
+                 padding-top: 0px;
+             }
+
+             div.recblock {
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 8px;  
+                padding-bottom: 50px;
+                padding-left: 10%;
+                padding-right: 10%;
+             }
+
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-bottom: 0%;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+                padding-top: 80px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+    
+    a:link {color: black; }
+    a:visited {color: black; }
+    
+    .imag {
+    animation: fadeInAnimation ease 5s
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+      
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+    
+    .imstuff  {
+        transition: transform 0.16s;
+        height: 100px;
+    
+    }
+    .imstuff:hover{
+      -webkit-transform: rotate(0deg) translate(0px, -12px);
+    }
+    
+    
+    a.demo_img {
+		display: block;
+		width:auto;
+		position:relative;
+		line-height:25px;
+	}
+	
+	a.demo_img>div {
+		position: fixed;
+		left: 0%; /* change this value to one that works best for you */
+		top: 353px; /* change this value to one that works best for you */
+		background: transparent url(/generator/show-clickable-imge-link-on-hover_files/arrow-down-grey.png);
+		opacity:0;
+		height: 0;
+		overflow: scroll;
+		
+		/* Enable transitions */
+		/*-webkit-transition: all .3s ease .15s;
+		-moz-transition: all .3s ease .15s;
+		-o-transition: all .3s ease .15s;
+		-ms-transition: all .3s ease .15s;
+		transition: all .3s ease .15s;*/
+	}
+	
+	a.demo_img>div img {
+		padding:8px;
+		margin-left:4px;
+		border:0px solid #BCBDC0;
+		background-color:#000000;
+		-webkit-border-radius: 5px;
+	   	   -moz-border-radius: 5px;
+		    	border-radius: 5px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	a.demo_img:hover>div {
+		
+		opacity:1;
+		width: 100%;
+		height: auto;
+		padding-left: 6%;
+        padding-right: 5%;
+		opacity:.95;
+        max-height: 280px;
+		z-index:1;
+	}
+	
+	a.demo_img>div p {
+        display: none;
+		padding:8px;
+		margin-left:0px;
+		border:1px solid #b30a0a;
+		background-color:#1b1a1a;
+		-webkit-border-radius: 0px;
+	   	   -moz-border-radius: 0px;
+		    	border-radius: 0px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	/*a.demo_p:hover>div {
+		
+		opacity:1;
+		width: 600px;
+		height: 400px;
+		padding: 8px;   
+		
+		z-index:1;
+	}*/
+
+.infosec {
+padding-left: 0%;
+padding-right: 0%;
+}
+
+    }
+         
+         
+         </style>
+     </head>
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                            <li><a href="/music.html">Music</a></li>
+                            <li><a href="/dance.html">Dance</a></li>
+                            <li><a href="/artworks.html">Artworks</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/press.html">Press</a></li>
+                            <li><a href="/extras.html">Back to Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+ 
+            <a href="extras.html" title="Back to Extras"><img class="icoback" src="images/icoback.png" alt="Back to Extras"></a>
+ 
+<!--Music START-->
+
+             <p class="Titles">RECOMMENDATIONS</p>
+             <p><span style="font-size: xx-large; font-weight: bold;">Music</span><br>
+
+                <div class="recblock">
+
+        <a class="demo_img" href="https://open.spotify.com/intl-pt/album/3oc0Ugi50zLuKrwqw3rtUG?si=8Ur5RMM7QAeY1ItkZFQzyg" title="" target="_blank">
+        <img class="imstuff" src="https://i.scdn.co/image/ab67616d0000b273fd23a1c463148cad3002be6d" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Heartsdales - The Legend</span></p></div>
+        </a></td><td>
+            
+        <a class="demo_img" href="https://open.spotify.com/intl-pt/album/0EeOUSpx4sHDdDJkGRT5Qm?si=NZuSwcUpQluA5hDEgwVoUQ" title="" target="_blank">
+        <img class="imstuff" src="https://i.scdn.co/image/ab67616d0000b273a4f2e5cb2f0ca3cc2a5a42f9" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">m-flo - ASTROMANTIC</span></p></div>
+        </a></td><td>
+            
+        <a class="demo_img" href="https://open.spotify.com/intl-pt/album/45ba6QAtNrdv6Ke4MFOKk9?si=0Vlehiq9SJWszNAWJ-XKHA" title="" target="_blank">
+        <img class="imstuff" src="https://i.scdn.co/image/ab67616d0000b273696b4e67423edd64784bfbb4" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Tyler, the Creator - Call Me If You Get Lost</span></p></div>
+        </a></td><td>     
+            
+        <a class="demo_img" href="https://open.spotify.com/intl-pt/album/0txzXbDfTn3vAdx77iCaXd?si=FWL-68frRNuFrlwvj6weZw" title="" target="_blank">
+        <img class="imstuff" src="https://i.scdn.co/image/ab67616d0000b2739e77d65619f80436b5cc9d12" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Boney M - Nightflight to Venus</span></p></div>
+        </a></td><td>  
+
+        <a class="demo_img" href="https://open.spotify.com/intl-pt/album/4FhRess5TiGML7doG1wP2e?si=LtJD0Xz6R9itBooGMc1Nvg" title="" target="_blank">
+        <img class="imstuff" src="https://i.scdn.co/image/ab67616d0000b273c843939746741391a93be45e" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">HEY-SMITH - Rest In Punk</span></p></div>
+        </a></td><td>  
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/7rgq4mAjZOPGVJCRF56FU4?si=Lvk9uB2qRYC23LFd12IpnQ" title="" target="_blank">
+        <img class="imstuff" src="https://cdn-images.dzcdn.net/images/cover/f7d8a61b8c4b118e642acfb3db0a45a1/0x1900-000000-80-0-0.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">The Offspring - Americana</span></p></div>
+        </a></td><td>
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/4IHCSMFeslFxWyvGJk6vwI?si=exIdn7inQ6mm6DqgqL6VLw" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2Fdce184f61b9ea162afd920671e4d95be.1000x1000x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Jvcki Wai - Enchanted Propaganda</span></p></div>
+        </a></td><td>
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/0GvJEsPWf7aRrgkSVXzXRj?si=2X_PGc7qQXWn6Q6Dvx8iyw" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/874x0/https%3A%2F%2Fimages.genius.com%2Ff459aed0d9e6685e788c111437b6ad21.999x999x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Rodrigo Zin - Grana Azul</span><br></p></div>
+        </a></td><td>
+            
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/5vDVFuzV8aAIymXSkpyJoe?si=i5ZOjbOHS0SOFSAFDGUyZg" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F77e9525f23fce9612fe72d2cb43f2b34.1000x1000x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Kero Kero Bonito - Bonito Generation</span><br></p></div>
+        </a></td><td>
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/1mRbJoqeSbu9hymCz5PxUY?si=q_tjgOHaRC-_zsmFN9roiA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2F5110e696b9e21ace41b4e13fcd02354e.1000x1000x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Yun Li - Validation</span><br></p></div>
+        </a></td><td>    
+            
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/6pwuKxMUkNg673KETsXPUV?si=3JgMjPcBSBaLFgDRbJZFcA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fde6e7ab3dc06c13eed2f853493b1406e.1000x1000x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Kids See Ghosts - Kids See Ghosts</span><br></p></div>
+        </a></td><td>    
+            
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/5DjjNBmvujNWjBqtKb3SGC?si=D0Td1-93SWONU33FmigjEA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2F771453cc29311520af94d258f546b0eb.1000x1000x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Dolphinkids - Bluebird</span><br></p></div>
+        </a></td><td>                  
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/0v48C1ORYL5YsT5VhOcNED?si=1afLHhq3R_ucGODaqoYQfA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F4oikrsu4ce35qgn5s00jy71vz.1000x998x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">RAPadura Xique Chico - Fita Embolada do Engenho</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/7Bk5l4wq2qttQyuR0RPX72?si=vCoDa2p9QF6_RyQqLdHzAA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F338427a0daf585f171ac50162c867a66.608x608x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Rodrigo Ogi - RÁ!</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/7GPWz6itBiV03Cps6ixs6v?si=ZMn2FNkTR7yC6L4MhY9vxg" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fd4717a07c4c58477077f418aa765f0c4.1000x1000x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Namie Amuro - STYLE</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/08M7y8eIqTpFiq5Rnt4hU6?si=zAMshTACS1So1dJ6eZZlzg" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2Fa14487b1560afae0287865eed3049bb3.1000x1000x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Tokyo Marui - Lullabies for Demons</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/4Qq4x0tJGWEFZt6jnvOKrQ?si=Oym0mP8hQAyt1MD8u50-Ew" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F0b3312dbb95994762fb281b48cf493f5.1000x1000x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Gloria Groove - Lady Leste</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/2uhB1KivbFnlkARpbd0Cvu?si=JBXFTQ_hT2KT6Ib8PNjOfA" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/340x340/https%3A%2F%2Fimages.genius.com%2F1f76dfd639861c8035ecb09e29aaddf4.636x636x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">100 gecs - 1000 gecs</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://music.apple.com/jp/album/%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%BF%E3%82%A4%E3%83%A0/278362679?l=en-US" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F7a38a7272b96ea169930732b2da1d0da.844x844x1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Morning Musume - First Time</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://open.spotify.com/intl-pt/album/20MnU7TMGi4OEPkPZjZxYA?si=YOqP8nVOSxOGeCONfjsCig" title="" target="_blank">
+        <img class="imstuff" src="https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F92a183e377b0f2c40d0cd0e8e6511382.600x600x1.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Primary - Primary And The Messengers LP</span><br></p></div>
+        </a></td><td> 
+
+        </div>
+
+<!--Music END-->
+
+<!--Animation START-->
+
+        <p><span style="font-size: xx-large; font-weight: bold;">Animation</span><br>
+
+            <div class="recblock">
+
+    <a class="demo_img" href="https://myanimelist.net/anime/1/Cowboy_Bebop?q=cowboy&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/76885-4.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Cowboy Bebop</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/339/Serial_Experiments_Lain?q=lain&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/78814-5.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Serial Experiments Lain</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0417299/" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/74852-2.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Avatar: The Last Airbender</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/11061/Hunter_x_Hunter_2011?q=hunter%20&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/79076-5.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Hunter x Hunter</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/53393/Tengoku_Daimakyou?q=tengoku&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/series/426165/posters/646813d28bad5.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Tengoku Daimakyo</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/47/Akira" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/1332/posters/1332.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Akira</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt2380307/?ref_=nv_sr_srsg_0_tt_2_nm_6_q_coco" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/321/posters/643f3110de97b.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Coco</span><br></p></div>
+        </a></td><td> 
+            
+    <a class="demo_img" href="https://myanimelist.net/anime/13601/Psycho-Pass?q=psycho&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/262090-5.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Psycho Pass</span><br></p></div>
+        </a></td><td>              
+
+    <a class="demo_img" href="https://myanimelist.net/anime/37171/Asobi_Asobase?q=asobi&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/series/346798/posters/6144db46ecaca.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Asobi Asobase</span><br></p></div>
+        </a></td><td>
+
+    <a class="demo_img" href="https://myanimelist.net/anime/572/Kaze_no_Tani_no_Nausica%C3%A4?q=nausic&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/1206/posters/64b1b4700c423.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Kaze no Tani no Nausicaä</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/32998/91_Days?q=91&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/309530-6.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">91 Days</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/889/Black_Lagoon?q=black%20l&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/79604-10.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Black Lagoon</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt4633694/?ref_=nv_sr_srsg_1_tt_7_nm_0_q_into%2520the%2520spid" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/33/posters/33.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">Spiderman Into the Spiderverse</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0138749/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_the%2520road%2520to%2520el" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/1241/posters/63977c605722b.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">The Road to El Dorado</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/anime/40052/Great_Pretender?q=great%20pre&cat=anime" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/series/376144/posters/5ebaa0309514f.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">The Great Pretender</span><br></p></div>
+        </a></td><td> 
+
+        </div>
+
+<!--Animation END-->
+
+<!--Comics START-->
+
+            <p><span style="font-size: xx-large; font-weight: bold;">Comics</span><br>
+             
+<div class="recblock">
+
+    <a class="demo_img" href="https://myanimelist.net/manga/656/Vagabond" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/1/259070.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">VAGABOND</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/manga/10443/Bakuon_Rettou" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/3/173111.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BAKUON RETTOU</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/manga/124520/Boys_Run_the_Riot" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/2/259389.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BOYS RUN THE RIOT</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/manga/26/Hunter_x_Hunter" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/2/253119.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">HUNTER X HUNTER</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/manga/13/One_Piece" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/2/253146.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">ONE PIECE</span><br></p></div>
+        </a></td><td>             
+
+    <a class="demo_img" href="https://www.marvel.com/comics/events/251/house_of_m" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.marvel.com/u/prod/marvel/i/mg/3/b0/589e106eb6191/portrait_uncanny.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">HOUSE OF M</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://myanimelist.net/manga/21419/Nozoki_Ana" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.myanimelist.net/images/manga/2/178011.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">NOZOKI ANA</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://en.wikipedia.org/wiki/Maus" title="" target="_blank">
+        <img class="imstuff" src="https://m.media-amazon.com/images/I/81rV+xVfJAL.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">MAUS</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.amazon.com.br/Bom-dia-Socorro-Paulo-Moreira/dp/6558032627" title="" target="_blank">
+        <img class="imstuff" src="https://m.media-amazon.com/images/I/61-scTA3RGL._SY466_.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BOM DIA SOCORRO</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://anilist.co/manga/86559/Golden-Kamuy/" title="" target="_blank">
+        <img class="imstuff" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx86559-YbAt5jybSKyX.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">GOLDEN KAMUY</span><br></p></div>
+    </a></td><td> 
+
+    <a class="demo_img" href="https://anilist.co/manga/30698/Shin-Seiki-Evangelion/" title="" target="_blank">
+        <img class="imstuff" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30698-0niTa3yn2rNK.png" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">EVANGELION</span><br></p></div>
+    </a></td><td> 
+
+    <a class="demo_img" href="https://anilist.co/manga/30029/Paradise-Kiss/" title="" target="_blank">
+        <img class="imstuff" src="https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx30029-yQdvHqd3GxKy.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">PARADISE KISS</span><br></p></div>
+    </a></td><td> 
+
+        </div>
+
+<!--Comics END-->
+
+<!--TV Series START-->
+
+                <p><span style="font-size: xx-large; font-weight: bold;">TV Series</span><br>
+
+                    <div class="recblock">
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt1439629/?ref_=fn_al_tt_1" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/94571-7.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">COMMUNITY</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt1190634/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_the%2520boys" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/5c5c402b075cc.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">THE BOYS</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt14403178/?ref_=nv_sr_srsg_1_tt_5_nm_2_q_beef" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/series/399838/posters/642367285d067.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BEEF</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt16867040/?ref_=nv_sr_srsg_0_tt_1_nm_0_q_cunhk%2520on%2520earth" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/series/414217/posters/641058bf372e8.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">CUNK ON EARTH</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0367279/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_arrested" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/72173-8.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">ARRESTED DEVELOPMENT</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt7660850/?ref_=nv_sr_srsg_1_tt_7_nm_0_q_succ" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/series/338186/posters/62089567.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">SUCCESSION</span><br></p></div>
+        </a></td><td>           
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0141842/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_sopra" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/75299-17.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">THE SOPRANOS</span><br></p></div>
+        </a></td><td>  
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt4288182/?ref_=nv_sr_srsg_5_tt_7_nm_0_q_atl" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/posters/313999-2.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">ATLANTA</span><br></p></div>
+        </a></td><td>  
+
+        </div>
+
+<!--TV Series END-->
+
+<!--Movies START-->
+                    
+        <p><span style="font-size: xx-large; font-weight: bold;">Movies</span><br>
+
+<div class="recblock">
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0099685/?ref_=nv_sr_srsg_0_tt_4_nm_4_q_goodfel" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/380/posters/380.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">GOODFELLAS</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0446029/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_soctt%2520pilgrim" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/1263/posters/5f274264ab79c.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">SCOTT PILGRIM VS. THE WORLD</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt29344984/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_bad%2520lands" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/350103/posters/6536d3a88b0ab.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BAD LANDS</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt6139732/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_aladd" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/6792/posters/653abcdd69fff.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">ALADDIN (2019)</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt6710474/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_everything" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/331939/posters/6231280c1f319.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">EVERYTHING EVERYWHERE ALL AT ONCE</span><br></p></div>
+        </a></td><td> 
+    
+    <a class="demo_img" href="https://www.imdb.com/title/tt5727208/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_uncut" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/118299/posters/25872419.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">UNCUT GEMS</span><br></p></div>
+        </a></td><td>  
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0365686/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_revolver" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/4012/posters/4012.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">REVOLVER</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0364569/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_oldb" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/movies/1200/posters/1200.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">OLDBOY</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0281364/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_wasab" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/8545/posters/64da0b511b3ba.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">WASABI</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt0463985/?ref_=nv_sr_srsg_3_tt_8_nm_0_q_tokyo%2520dr" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/26328/posters/609f32de4543a.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">FAST AND FURIOUS: TOKYO DRIFT</span><br></p></div>
+        </a></td><td> 
+
+    <a class="demo_img" href="https://www.imdb.com/title/tt1517268/?ref_=nv_sr_srsg_1_tt_3_nm_4_q_barbie" title="" target="_blank">
+        <img class="imstuff" src="https://artworks.thetvdb.com/banners/v4/movie/16612/posters/64ba61bb1dc73.jpg" height="185px">
+        <div><p class="white"><span style="font-size:15px; text-align:left;">BARBIE</span><br></p></div>
+        </a></td><td>              
+
+        </div>
+
+<!--Movies END-->        
+
+<div class="navi">
+    <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+    </div> 
+
+<div class="footer">
+    <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+</div>
+
+<script src="/js/main.js"></script>
+            </body>
+ </html>

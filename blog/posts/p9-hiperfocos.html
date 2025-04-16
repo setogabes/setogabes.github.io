@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoPost: Hiperfocos</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(/images/tilebg.png);
+             }
+ 
+             @font-face {
+              font-family: 'Gabesfont-Regular';
+                font-weight: 400;
+                src: url(/fonts/Gabesfont-Regular.ttf) format(woff2);
+             }
+
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(/fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(/fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+
+             img.gapspace {
+              width: 2px;
+                          }
+
+             div.toplogo {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            }
+
+            img.setoblog {
+            width: 350px;
+           }
+
+          .goback:hover {
+            opacity: 25%;
+          }
+
+          .goback .icoback {
+            width: 50px;
+            float: inline-start;
+            padding-right: 0%;
+          }
+
+          .goback p {
+           max-width: fit-content;
+           font-family: 'VCR_OSD';
+           font-size: medium;
+           font-weight: 600;
+           float: inline-start;
+           padding-left: 0%;
+           margin: 0%;
+           margin-top: 20px;
+           margin-left: 5px;
+          }
+           
+
+           h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 350%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 120%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin: 0%;
+            padding-left: 5%;
+            padding-bottom: 5px;
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           p {
+            font-family: "Gabesfont-Regular";
+            font-size: 190%;
+            color: rgb(0, 0, 0);
+            padding-left: 5%;
+            padding-right: 5%;
+           }
+
+           .post {
+            display: grid;
+            background-color: whitesmoke;
+            margin: auto;
+            max-width: 50%;
+          }
+          
+          .imgpost {
+            max-width: 100%;
+          }
+
+          .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+          img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+
+            }
+
+            p.footertext {
+              font-family: 'VCR_OSD';
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            #disqus_thread {
+              display: block;
+              padding-left: 2%;
+              padding-right: 2%;
+              padding-bottom: 2%;
+              padding-top: 2%;
+              margin: auto;
+              margin-left: 25%;
+              margin-right: 25%;
+              background-color: whitesmoke;
+            }
+
+
+.burger-menu {
+  display: none;
+}
+
+.header {
+  display: none;
+}
+
+.Nomomento{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.Nomomento p {
+  font-family: 'VCR_OSD';
+  color: whitesmoke;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.Nomomento p a {
+  font-family: 'VCR_OSD';
+  color: rgb(202, 26, 26);
+  font-size: 15px;
+}
+
+
+
+                    /* MOBILE VERSION */
+
+                    @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+img.icoback {
+display: flex;
+}
+
+img.setoblog {
+display: none;
+}
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+font-weight: lighter;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+
+            h2 {
+            font-family: "VCR_OSD";
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            font-size: 200%;
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           h3 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding-top: 1%;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-left: 5%;
+            padding-bottom: 5px;
+
+           }
+
+           h4 {
+            font-family: "VCR_OSD";
+            font-size: 100%;
+            color: rgb(0, 0, 0);
+            padding: 0%;
+            margin: 0%;
+            padding-left: 5%;
+           }
+
+           .post {
+            justify-self: center;
+            min-width: 90%;
+           }
+
+           #disqus_thread {
+            display: block;
+            justify-content: center;
+            margin: auto;
+            max-width: 86%;
+            background-color: whitesmoke;
+            }
+
+            #gapspace {
+              width: 10px;
+            }
+
+            .Nomomento{
+  display: flex;
+  background-color: rgb(0, 0, 0);
+}
+
+.Nomomento p {
+  font-family: 'VCR_OSD';
+  color: whitesmoke;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.Nomomento p a {
+  font-family: 'VCR_OSD';
+  color: rgb(202, 26, 26);
+  font-size: 15px;
+}
+
+.imgpost {
+
+}
+
+
+          }
+
+         </style>
+        </head>
+
+        <div class="header">
+          <a href="index.html"><img src="/images/setoblog_logo.png" alt="setoGabes" style="width: 170px; margin-top: 15px;"></a>
+          <div class="burger-menu-btn"></div>
+      </div>
+  
+                  <!--burger menu start-->
+  
+                  <nav class="burger-menu">
+                      <ul>
+                          <li><a href="/music.html">Music</a></li>
+                          <li><a href="/dance.html">Dance</a></li>
+                          <li><a href="/artworks.html">Artworks</a></li>
+                          <li><a href="/about.html">About</a></li>
+                          <li><a href="/press.html">Press</a></li>
+                          <li><a href="/extras.html">Back to Extras</a></li>
+          
+          
+                  </ul>
+                  </nav>
+          
+                  <!--burger menu end-->
+
+        <body>
+
+          <div class="toplogo">
+            <a href="/blog/home.html" title="Blog's Homepage"><img class="setoblog" src="/images/setoblog_logo.png" alt="setoBlog"></a>
+         </div>
+
+          <div class="post">
+
+            <span class="goback">
+            <a href="/blog/home.html" title="Back to Extras"><img class="icoback" src="/images/icoback.png" alt="Back to Extras"><p>Return</p></a>
+
+          </span>
+
+          <header> 
+            <h2>HIPERFOCOS</h2>
+            <h3>Galera lembrei a senha do blog!!!!</h3>
+            <h4>27.03.25</h4>
+          </header>
+            
+            <p>
+              Eu descobri recentemente que tenho hiperfocos. Isso explica porque de tempos em tempos eu fico completamente fixado e obcecado por algo específico. Esse site inteiro, por exemplo, foi feito durante um hiperfoco sobre o revival da internet antiga por meio do neocities! Durante duas semanas, eu fiquei maravilhado com a "indie web" e mergulhei em diversos tutoriais pra aprender html e css, com a finalidade de criar um site. Na época, eu sentia falta de ter um espaço 100% meu na internet, pois as redes sociais estavam indo de mal à pior. Então juntei a necessidade de ter uma página que agregasse tudo que eu faço, com a vontade de mexer com isso, e aqui estamos! <br> <br>
+              Porém a pior parte de hiperfocos é que uma hora eles acabam. E quando acabam, você passa a querer fazer tudo, exceto o que você estava fazendo enquanto o hiperfoco controlava sua vida. Eventualmente deixei esse site de lado, pois perdi o interesse de um dia pro outro, e passei a fixar em outra coisa.
+              <br> <br>
+              Eu não consigo colocar direito em palavras o quanto eu ODEIO todo esse lance de hiperfoco! Minha vida toda eu tive uma dificuldade extrema de gostar e me dedicar à coisas de forma "normal". Ou eu fico completamente obcecado e mergulho em algum assunto por semanas, ou simplesmente não quero ver o assunto em si nem pintado de ouro. Isso faz com que eu frequentemente fique de saco de cheio ou desista de coisas no meio do caminho, e o que fica é o sentimento de inaptidão e incapacitade perante minha aparente falta de disciplina.
+              <br><br>
+              Por muito tempo eu fui extremamente duro comigo mesmo por conta disso, ficava com raiva de mim mesmo e me tratava como meu pior inimigo. Até que no final do ano passado, por influência de uma amiga que tinha sido recém diagnosticada com TDAH (salve, Lari!), eu comecei a suspeitar que talvez esses episódios tivessem um motivo e fossem parte de algo semelhante. Passei a pesquisar muita coisa sobre o transtorno de déficit de atenção e hiperatividade e me identifiquei com bastante coisa. Levei o assunto pra terapia, e após um longo (e caro) processo de avaliação neuropsicológica, descobri que não tenho TDAH.
+              <br><br>
+              De primeira fiquei desesperado. Se não não posso culpar um TDAH por ser assim, isso significa que eu sou um fudido e ponto? <br>
+              Não exatamente! Embora o diagnóstico pra TDAH tenha dado negativo, a avaliação apontou que além de um TAG (Transtorno de Ansiedade Generalizada) forte, que eu já sei que tenho há anos, eu também tinha algo chamado Transtorno Depressivo Recorrente.
+              <br><br>
+              Depois de uma leve crise decorrente do choque de descobrir que tenho a famosa depressão, as profissionais que me acompanham me explicaram que embora o diagnóstico seja outro, os sintomas são muito parecidos e por vezes até compartilhados. Então apesar de não ser uma pessoa com TDAH, eu apresento muito dos sintomas do mesmo, por conta do transtorno depressivo recorrente, e foi assim que descobri que tenho hiperfocos. <br>
+              Junto disso vieram respostas pra várias outras queixas. A dificuldade de me concentrar, os pensamentos intrusivos, a tristeza intensa que me domina de vez em quando, a tendência a se isolar, tudo tinha uma origem. Tudo vinha desse maldito transtorno depressivo.
+              <br><br>
+              Pra ser sincero eu ainda não sei direito a diferença. Minha terapeuta me disse que minha depressão é diferente da "depressão comum". Se manifesta de jeitos diferentes, e vai precisar de abordagens diferentes. Ainda tô no começo do tratamento pra isso e no processo de entender melhor toda essa fita. Aparentemente tenho isso desde criança, mas não sei de onde isso veio, como começou, nem nada. É muita coisa e me sinto extremamente sobrecarregado no momento, mas pelo menos agora sei que tem um motivo pra eu ser assim. Aparentemente eu não sou um fudido e ponto. Aparentemente tem como eu ser uma dessas pessoas funcionais que eu vejo fazendo coisas por aí.
+              <br><br>
+              Enfim, ta aí o motivo pelo qual esse blog (e o resto do site) ficaram abandonados por tanto tempo. Desde então eu tenho estado em tratamento, voltei a dançar quase que regularmente, comecei a fazer aula de canto por uns meses, parei quando minha professora teve que dar uma pausa por questões de saúde, aí comecei a aprender a tocar guitarra (hiperfoquei nisso por muito tempo, inclusive, e agora que a fixação passou estou dando meu máximo pra continuar treinando direitinho), e mais importante, passei a ser muito mais compreensivo comigo mesmo. Vamo ver aonde isso vai me levar.
+              <br><br>
+              Nesse meio tempo o <a href="http://setogabes.bsky.social" target="_blank">Bluesky</a> finalmente decolou, e muito do uso que eu tinha pra esse blog na época que eu usava o X (e odiava) foi movido pra lá, então se você quiser acompanhar o que tá rolando comigo mais frequentemente, me segue lá! Vou deixar esse blog pra quando eu tiver umas "rants" mais longas, tipo essa.
+              <br><br>
+              <img class="imgpost" src="https://iili.io/3uoZHEQ.jpg" alt="">
+
+
+              <!--Se tiver iamgem, colocar na classe .imgpost pra encaixar no mobile tbm-->
+            </p> 
+
+            <div class="Nomomento">
+              
+              <p><span style="font-size: 20px;">No momento:</span> <br> <br>
+                ⦿ Ouvindo minha <a href="https://open.spotify.com/playlist/1yo4fJF02QQPvx5iB8l4vN?si=814e14c1541349bf">playlist de J-Rock</a> <br>
+                ⦿ Desejando pena de morte pra quem inventou a ~cadeira gamer~ pois minha bunda está DOENDO <br>
+                ⦿ Tentando não pensar em tudo que tenho que fazer hoje<br>
+
+
+          </div>
+
+        <!--ainda quero colocar tags, e talvez comentários aqui embaixo, não sei...-->
+
+          </div>
+
+          <img class="gapspace" src="/images/placeholder.png" alt="">
+          
+<!-- begin disqus -->
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://setogabes-mod.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<!-- end disqusd -->
+ 
+
+          <div class="footer">
+            <p class="footertext"><img class="parental" style= "opacity:70%;" src="/images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+        Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script id="dsq-count-scr" src="//setogabes-mod.disqus.com/count.js" async></script>
+
+        </body>
+ </html>

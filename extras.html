@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoExtras</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+ 
+             img {
+                 display: block;
+                 width: 300px;
+             }
+ 
+             .navrow {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 80px;
+                padding-right: 80px;
+                align-items: center;
+                padding-bottom: 50px;
+            }
+
+            .navleft {
+                flex: 50%;
+            }
+
+            .navright {
+                flex: 50%;
+                display: flex;
+                gap: 20px;
+                justify-content: flex-end;
+                height: 15px;
+            }
+
+            .navright a {
+                font-family: 'VCR_OSD';
+                color: black;
+                text-decoration: none;
+                background-color: rgb(187, 187, 187);
+            }
+
+            .navright a:hover {
+                color: red;
+                
+            }
+
+            .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+ 
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+
+             @font-face {
+                font-family: 'VCR_OSDneue';
+                font-weight: 400;
+                src: url(fonts/VCR_OSDneue.woff2) format(woff2);
+                src: url(fonts/VCR_OSDneue.woff) format(woff);
+            }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 padding-bottom: 2%;
+             }
+
+             p a {
+                text-decoration: none;
+                color: black;
+             }
+
+             p a:hover {
+                text-decoration: none;
+                color: red;
+             }
+
+             span {
+                font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+
+             .header {
+                display: none;
+             }
+
+             .burger-menu {
+                display: none;
+             }
+
+                                  /* MOBILE VERSION */
+
+                                  @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+p.Titles {
+
+}
+
+p {
+    margin-left: 12%;
+    margin-right: 12%;
+    padding-top: 30px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.flex-container a img:hover {
+    transform:scale(1);
+}
+
+.row {
+    display: block;
+    
+}
+
+.left {
+  
+}
+
+.right {
+
+    flex: 50%;
+    flex-wrap: wrap;
+}
+
+div.navi {
+
+padding-top: 15%;
+
+}
+
+.footer {
+    padding-top: 0%;
+}
+                }
+
+         </style>
+     </head>
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                        <li><a href="music.html">Music</a></li>
+                        <li><a href="dance.html">Dance</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="press.html" >Press</a></li>
+                        <li><a href="#" style="color: rgb(100, 100, 100);">Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+
+        <div class="navrow">
+            <div class="navleft">
+
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+
+        </div>
+
+        <div class="navright">
+
+            <a href="music.html">Music</a>
+            <a href="dance.html">Dance</a>
+            <a href="artworks.html">Artworks</a>
+            <a href="about.html">About</a>
+            <a href="press.html">Press</a>
+            <a href="#" style="color: grey;">Extras</a>
+        </div>
+    </div>
+ 
+             <p><a href="blog/home.html"><span>BLOG</span><br>
+             rants and thoughts that no one will ever read</p></a>
+             
+             <p><a href="gamelog.html"><span>GAMELOG</span><br>
+             games i've played, games i want to play and games that i've dropped because they suck</p></a>
+
+             <p><a href="recommendations.html"><span>RECOMMENDATIONS</span><br>
+             stuff i think you will like (solely because I like them)</p></a>
+             
+             <p><a href="nothing.html"><span>NOTHING</span><br>
+             very serious and important part of this website</p></a>
+
+             <p><a href="aboutsite.html"><span>ABOUT THIS SITE</span><br>
+             self explanatory</p></a>
+
+             <div class="footer">
+                <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+            Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+        </div>
+
+        <script src="/js/main.js"></script>
+
+            </body>
+ </html>

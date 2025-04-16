@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoGames</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+ 
+             img.icoback {
+                width: 3%;
+            }
+
+            img.icoback:hover {
+                width: 3%;
+                opacity: 25%;
+            }
+ 
+             @font-face {
+                 font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+ 
+             p.Titles {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: 500%;
+                 font-weight: bold;
+             }
+
+             p.section {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 250px;
+                 padding-right: 250px;
+                 padding-top: 10px;
+             }
+
+             div {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 8px;  
+                padding-bottom: 50px;
+                padding-left: 20%;
+                padding-right: 20%;
+             }
+
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-bottom: 0%;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+                padding-top: 80px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+            p{font-family: 'VCR_OSD'; text-align:center; position: relative; top: -4px;}
+    p.left{text-align:left; position: relative; top: -4px;}
+    p.down{text-align:center; position: relative; top: 3px;}
+    p.white{text-align:center; font-size: 15px; color: white;}
+    h2{text-align:center; position: relative; top: 18px;
+    }
+     h4{
+      text-align: center; 
+      color: #000000;
+      font-size: 42px;
+    }
+    .invert{
+      transition-duration: 0.17s;
+     }
+    .invert:hover{
+      filter: invert(100%);
+    }
+    
+    .invert2{
+      transition-duration: 0.17s;
+      filter: invert(100%);
+     }
+    .invert2:hover{
+      filter: invert(00%);
+    }
+    img.middle{
+    display: block;
+    margin-left:auto; 
+    margin-right:auto;
+    }
+    a:link {color: black; }
+    a:visited {color: black; }
+    
+    .imag {
+    animation: fadeInAnimation ease 5s
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    }
+      
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+    .imstuff{transition: transform 0.16s;}
+    .imstuff:hover{
+      -webkit-transform: rotate(0deg) translate(0px, -12px);
+    }
+    
+    
+    a.demo_img {
+		display: block;
+		width:auto;
+		position:relative;
+		line-height:25px;
+	}
+	
+	a.demo_img>div {
+		position:absolute;
+		padding:0;
+		margin:0;
+		left: -170px; /* change this value to one that works best for you */
+		top: 153px; /* change this value to one that works best for you */
+		background: transparent url(/generator/show-clickable-imge-link-on-hover_files/arrow-down-grey.png) left 23px no-repeat;
+		
+		opacity:0;
+		height: 0;
+		overflow: hidden;
+		
+		/* Enable transitions */
+		/*-webkit-transition: all .3s ease .15s;
+		-moz-transition: all .3s ease .15s;
+		-o-transition: all .3s ease .15s;
+		-ms-transition: all .3s ease .15s;
+		transition: all .3s ease .15s;*/
+	}
+	
+	a.demo_img>div img {
+		padding:8px;
+		margin-left:4px;
+		border:0px solid #BCBDC0;
+		background-color:#000000;
+		-webkit-border-radius: 5px;
+	   	   -moz-border-radius: 5px;
+		    	border-radius: 5px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	a.demo_img:hover>div {
+		
+		opacity:1;
+		width: 450px;
+		height: auto;
+		padding: 8px;
+		opacity:.95;
+		
+		z-index:1;
+	}
+	
+	a.demo_img>div p {
+		padding:8px;
+		margin-left:0px;
+		border:1px solid #b30a0a;
+		background-color:#1b1a1a;
+		-webkit-border-radius: 0px;
+	   	   -moz-border-radius: 0px;
+		    	border-radius: 0px;
+		
+		-webkit-box-sizing:border-box; 
+		   -moz-box-sizing:border-box; 
+				box-sizing:border-box;
+	}
+	/*a.demo_p:hover>div {
+		
+		opacity:1;
+		width: 600px;
+		height: 400px;
+		padding: 8px;   
+		
+		z-index:1;
+	}*/
+
+    .mobTitles {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+         
+         </style>
+     </head>
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                            <li><a href="/music.html">Music</a></li>
+                            <li><a href="/dance.html">Dance</a></li>
+                            <li><a href="/artworks.html">Artworks</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/press.html">Press</a></li>
+                            <li><a href="/extras.html">Back to Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+
+            <a href="extras.html" title="Back to Extras"><img class="icoback" src="images/icoback.png" alt="Back to Extras"></a>
+ 
+             <p class="Titles">GAMELOG</p>
+
+<!--Hall of Fame START-->
+
+             <p class="infosec"><span style="font-size: xx-large; font-weight: bold;">Hall of fame</span><br>
+             <span style="font-size: medium;">Among the games that I've finished, these are the 10/10 ones that will stay forever in my mind as masterpieces.</span></p>
+
+             <div>
+
+            <a class="demo_img" title="NIER:AUTOMATA" target="_blank">
+                <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/46555-1.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">NIER:AUTOMATA</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>Cyborgs fighting robots to save mankind. If you're familiar with Yoko Taro's works, you know how crazy and unexpected things get, and this is definetly his best work so far. The gameplay will change it up on you in flawless ways, the soundtrack is amazing, the story is sensational, and on top of it all, NIER:Automata is ALWAYS thinking outside the box. It's one of the games that will get your jaw on the floor thinking "woah, how did they thought of that?!" before you start crying.<br><br>
+            Tip: There's a lot of endings, but only one of them is the final. Keep playing until you simply can't, and you won't miss it. Also, don't play it on a pirated copy (I don't care about legality/morality when it comes to piracy, but just trust me on this one, okay?)</p></div>
+                </a></td><td>
+
+            <a class="demo_img" title="" target="_blank">
+                <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/48347-1.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">HELLBLADE: SENUA'S SACRIFICE</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>Superb single player experience. Set in the late 8th century, you play as Senua, a girl on a journey to save the soul of her lover. Throughout the game you learn more and more about the protagonist, her "curse" that makes her see things and hear voices, the traumas she carries with her and many more. The game will occasionally break the 4th wall and use the things that happen to Senua as game mechanics in unique and creative ways, to fully imerse you in her place. They did such a good job on this, that sometimes you forget you're holding a controller and playing a videogame. A very special game, with a very special story about grief, mental health and self knowledge. <br>
+            <br>Tip: Use headphones for this one.</p></div>
+                </a></td><td>    
+                    
+            <a class="demo_img" title="" target="_blank">
+                <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/8/6/8/654868_front.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">GHOST OF TSUSHIMA</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>Review text here</p></div>
+                </a></td><td>
+
+            <a class="demo_img" title="" target="_blank">
+                <img class="imstuff" src="https://cdn.thegamesdb.net/images/original/boxart/front/85133-1.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">TEKKEN 3</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>Review text here</p></div>
+                </a></td><td>            
+                    
+            <a class="demo_img" title="" target="_blank">
+                <img class="imstuff" src="https://cdn.thegamesdb.net/images/original/boxart/front/42320-1.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">SUPER MARIO ODYSSEY</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>The best Mario game that has ever existed. Yes, you heard that right, it's THAT good. <br>
+            It's like they gathered the best things that came out on different Mario games over the decades, and combined all of those here. <br>
+        Perfectly flawless gameplay, with fluid animations on tight detailed movements, new mechanics that unveil things you didn't even thought it was possible to do, greatest post game I've ever played, charismatic characters on worlds that could've win awards on level design, all of this happening with one of the greatest videogame soundtracks of all time playing in the background. <br>
+    It might be challenging as fuck, but it's never boring. Higly recommended.</p></div>
+                </a></td><td>  
+                    
+            <a class="demo_img" title="" target="_blank">
+                <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/38455-1.jpg" height="185px">
+                <div><p class="white"><span style="font-size:20px; text-align:left;">THE LEGEND OF ZELDA: BREATH OF THE WILD</span><br>
+                    ⍟⍟⍟⍟⍟<br>
+                <br>Review text here</p></div>
+                </a></td><td>                      
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/60146-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CONTROL</span><br>
+            ⍟⍟⍟⍟⍟<br>
+        <br>Review text here</p></div>
+        </a></td><td>  
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/54488-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SPIDER-MAN (2018)</span><br>
+            ⍟⍟⍟⍟⍟<br>
+        <br>Review text here</p></div>
+        </a></td><td>         
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/52805-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR (2018)</span><br>
+            ⍟⍟⍟⍟⍟<br>
+        <br>Review text here</p></div>
+        </a></td><td> 
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/12481-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RHYTHM HEAVEN</span><br>
+            ⍟⍟⍟⍟⍟<br>
+        <br>Review text here</p></div>
+        </a></td><td>      
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/11716-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">JACKIE CHAN STUNTMASTER</span><br>
+            ⍟⍟⍟⍟⍟<br>
+                    <br>
+        <br>Review text here</p></div>
+        </a></td><td>    
+
+        </div>
+
+<!--Hall of Fame END-->   
+
+<!--Finished START-->
+       
+
+             <p class="infosec"><span style="font-size: xx-large; font-weight: bold;">Finished</span><br>
+                <span style="font-size: medium;">Games that I've played till the end. Saw the credits and everything. Maybe even platinum'd some. </span></p>
+
+<div>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/52670-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DONKEY KONG: FROZEN APE</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/87675-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">METROID DREAD</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>   
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/42294-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MARIO KART 8 DELUXE</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>               
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/2559-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">KINGDOM HEARTS</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/111276-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RESIDENT EVIL 4 (2023)</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>           
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/3928-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RESIDENT EVIL 4</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td> 
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/87889-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">HADES</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                      
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7012-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NEED FOR SPEED: CARBON</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/43548-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">HOLLOW KNIGHT</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/80270-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">KATANA ZERO</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/69207-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GHOSTRUNNER</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/5437-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MEDAL OF HONOR: EUROPEAN ASSAULT</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/8288-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MEDAL OF HONOR UNDERGROUND</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/10826-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MEDAL OF HONOR</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/108527-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DRAGON BALL ADVANCED ADVENTURE</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/96787-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SPIDER-MAN: MILES MORALES</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/3/8/3/871383_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SIFU</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/111301-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR: RAGNAROK</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4987-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">APE ESCAPE</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/5/3/4/616534_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RED DEAD REDEMPTION 2</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/8/7/0/752870_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">TONY HAWK'S PRO SKATER 1+2</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/115050-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">STRAY</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/117993-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CRASH BANDICOOT 4: IT'S ABOUT TIME</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/114934-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">9 MONKEYS OF SHAOLIN</span><br>
+            ☆☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/43904-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CRASH BANDICOOT N.SANE TRILOGY</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/94031-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CELESTE</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/87597-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GUARDIANS OF THE GALAXY</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/20493-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">WOLFENSTEIN: THE NEW ORDER</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/3350-1.png" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CASTLEVANIA: CIRCLE OF THE MOON</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/3349-1.png" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CASTLEVANIA: ARIA OF SORROW</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/6702-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CASTLEVANIA: DAWN OF SORROW</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/86427-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CASTLEVANIA: SYMPHONY OF THE NIGHT</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/5476-1.png" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CASTLEVANIA: HARMONY OF DISSONANCE</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/29865-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">AM2R: ANOTHER METROID 2 REMAKE</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/3745-1.png" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">METROID: ZERO MISSION</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/20599-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DIABLO III</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/55964-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DOOM ETERNAL</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/35284-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DOOM (2016)</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/60768-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">YAKUZA KIWAMI 2</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/105794-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">UNCHARTED 2: AMONG THIEVES</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/70-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">UNCHARTED: DRAKE'S FORTUNE</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/78763-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NIER REPLICANT VER.1.22474487139</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/7/6/6/724766_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NEED FOR SPEED: HEAT</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/55757-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BATTLEFIELD V</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/114218-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GRAND THEFT AUTO: SAN ANDREAS</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>            
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/53992-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SHADOW OF THE TOMB RAIDER</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4158-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BURNOUT 3 TAKEDOWN</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>     
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/169-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MARIO KART WII</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/48755-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">YAKUZA KIWAMI</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/29523-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">HORIZON ZERO DAWN</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/9/7/0/738970_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">YAKUZA ZERO</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4813-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NEED FOR SPEED: UNDERGROUND 2</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/78753-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">STREETS OF KAMUROCHO</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/2089-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MAX PAYNE 3</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/71773-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">STREETS OF RAGE 4</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/65135-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MY FRIEND PEDRO</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/60572-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MONSTER HUNTER WORLD</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/20952-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GRAND THEFT AUTO V</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/6797-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">ELITE BEAT AGENTS</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/11907-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RESIDENT EVIL 5</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/11-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">ARMY OF TWO</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/13781-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">ARMY OF TWO: THE 40TH DAY</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/66239-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">JACKED</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4773-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">TONY HAWK'S AMERICAN WASTELAND</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/20708-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DRAKENGARD 3</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/299-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SUPER METROID</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/10392-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">THE LAST OF US</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/8173-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">HOMEFRONT</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/23305-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RYSE: SON OF ROME</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/13359-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR: ASCENSION</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/843-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR III</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/10720-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DRAKENGARD 2</span><br>
+            ☆☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7228-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DRAKENGARD</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/100016-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BUJINGAI</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/60662-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BURNOUT PARADISE REMASTERED</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/5857-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">50 CENT: BULLETPROOF</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/203-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">AERO FIGHTERS</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/11980-1.png" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BAYONETTA</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7290-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GUITAR HERO III</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7187-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GUITAR HERO II</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7189-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GUITAR HERO</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/12518-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">FARCRY 3</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/140-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SUPER MARIO BROS</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/11740-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CALL OF DUTY: BLACK OPS</span><br>
+            ★★☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/71205-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CALL OF DUTY: MODERN WARFARE II</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+             
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/7205-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">DEF JAM: FIGHT FOR NY</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/9626-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">APE ESCAPE 3</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/6837-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">MARIO KART DS</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/3942-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">BLACK</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/6859-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NEW SUPER MARIO BROS</span><br>
+            ★☆☆☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/2868-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">ALADDIN</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                 
+
+ <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://gamefaqs.gamespot.com/a/box/0/7/6/40076_front.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">THE LION KING: SIMBA'S MIGHTY ADVENTURE</span><br>
+            ?????<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/2366-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">POKÉMON PEARL</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/50-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">NINJA GAIDEN: DRAGON SWORD</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/12329-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SLEEPING DOGS</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/12698-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">THE LEGEND OF ZELDA: OCARINA OF TIME 3D</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>                
+
+            <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/136-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">SUPER MARIO WORLD</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td> 
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/8493-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR: GHOST OF SPARTA</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/89-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR: CHAINS OF OLYMPUS</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/88-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR II</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/26-2.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GOD OF WAR</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/96388-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RISE OF THE TOMB RAIDER</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/15875-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">TOMB RAIDER (2013)</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>  
+         
+<a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4165-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GRAND THEFT AUTO III</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>   
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/115918-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GRAND THEFT AUTO IV</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/4166-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">GRAND THEFT AUTO: VICE CITY</span><br>
+            ★★★☆☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>        
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/515-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CRASH BANDICOOT 3: WARPED</span><br>
+            ★★★★★<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/5689-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CRASH BANDICOOT 2</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>      
+            
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/1006-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">CRASH BANDICOOT</span><br>
+            ★★★★☆<br>
+        <br>Review text here</p></div>
+        </a></td><td>               
+
+        </div>
+                
+<!--Finished END-->
+
+<!--Dropped START-->
+
+            <p class="infosec"><span style="font-size: xx-large; font-weight: bold;">Dropped</span><br>
+                <span style="font-size: medium;">I tried. Fuck these games.</span></p>
+
+<div>
+             
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/99100-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">KINGDOM HEARTS II</span><br>
+            ☢☢☢<br>
+        <br>Review text here</p></div>
+        </a></td><td>
+
+    <a class="demo_img" title="" target="_blank">
+        <img class="imstuff" src="https://cdn.thegamesdb.net/images/thumb/boxart/front/52890-1.jpg" height="185px">
+        <div><p class="white"><span style="font-size:20px; text-align:left;">RACING LAGOON</span><br>
+            ☢<br>
+        <br>Review text here</p></div>
+        </a></td><td>      
+
+</div>
+
+<!--Dropped END-->
+
+             <p class="section">Setups</p>
+             
+             <p class="infosec"> <span style="font-weight: bold; font-size: 22px;">+ PC +</span><br>
+                <br>
+            AMD Ryzen 5 4500 CPU<br>
+            MSI A520M-A PRO Motherboard<br>
+            16gb RAM (2x 8gb Kingston Fury DDR4 3200mhz) <br>
+            NVIDIA GeForce GT 1030 <br>
+            Corsair CX430 Power Supply</p>
+                <p class="infosec"> <span style="font-weight: bold; font-size: 20px;">+ Samsung Galaxy Note 20 Ultra +</span><br>
+                    <br>
+            Gamesir X2 Type-C Joystick</p>
+            <p class="infosec"> <span style="font-weight: bold; font-size: 20px;">+ Playstation 4 Slim +</span><br>
+
+             <p class="section">Online?</p>
+             <p class="infosec">I don't really play online. I'm mostly into well thought out
+                single player experiences, or multiplayer/co-op with my
+                friends. Sometimes I'll make an exception for like, rhythm
+                and fighting games, because then victory depends on my skills only, and I don't have to deal with anyone else but
+                my opponent, who can't listen or speak to me. So any
+                E-Sportsy-teamworky-voice chat type of game is a
+                hard pass.</p>
+
+                <div class="navi">
+                    <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+                    </div> 
+
+                <div class="footer">
+                    <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+                Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+            </div>
+
+            <script src="/js/main.js"></script>
+            </body>
+ </html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>setoSite</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <style>
+            body {
+                 background-image: url(images/tilebg.png);
+             }
+
+             .text {
+                display: block;
+             }
+ 
+             img.icoback {
+                width: 3%;
+            }
+
+            img.icoback:hover {
+                width: 3%;
+                opacity: 25%;
+            }
+ 
+             @font-face {
+                font-family: 'VCR_OSD';
+                 font-weight: 400;
+                 src: url(fonts/vcr_osd_mono-webfont.woff2) format(woff2);
+                 src: url(fonts/vcr_osd_mono-webfont.woff) format(woff);
+             }
+ 
+             p.Titles {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: xx-large;
+                 font-weight: bold;
+             }
+ 
+             p {
+                 font-family: 'VCR_OSD';
+                 text-align: center;
+                 font-size: larger;
+                 padding-left: 250px;
+                 padding-right: 250px;
+                 padding-top: 10px;
+             }
+
+             .footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                font-size: 12px;
+            }
+
+            div.navi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            gap: 5em;
+        }
+
+        img.icotop {
+            width: 80px;
+        }
+
+        .header {
+                display: none;
+            }
+
+            .burger-menu {
+                display: none;
+            }
+
+                                   /* MOBILE VERSION */
+
+                                   @media only screen and (max-width: 1200px) {
+
+body {
+    overflow: visible;
+}
+
+.icoback {
+    display: none;
+}
+
+.burger-menu-btn {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url(/images/icomenu.png), url(/images/icoclose.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center left 50px;
+}
+
+.burger-menu {
+                display: none;
+                position: fixed;
+                width: 96%;
+                height: 100vh;
+                margin-top: 6px;
+                z-index: 900;
+                background-color: gray;
+            }
+
+.scrollable-place { 
+height: 1000px; 
+} 
+
+.remove-scrolling { 
+height: 100%; 
+overflow: hidden; 
+} 
+
+.burger-menu ul {
+list-style: none;
+margin-top: 20px;
+font-family: 'VCR_OSD';
+}
+
+.burger-menu ul li {
+display: block;
+padding-bottom: 60px;
+text-align: right;
+padding-right: 20px;
+font-size: 250%;
+}
+
+.burger-menu ul li a {
+text-decoration: none;
+color: black;
+}
+
+.navrow {
+                display: none;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .navright {
+                display: none;
+            }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6%;
+    padding-right: 6%;
+}            
+
+p.Titles {
+padding-left: 5%;
+padding-right: 5%;
+}
+
+p {
+margin-left: 0px;
+margin-right: 0px;
+padding-left: 0px;
+padding-right: 0px;
+}
+
+.textofida {
+display: block;
+justify-content: center;
+padding-left: 9%;
+padding-right: 9%;
+
+}
+
+div.navi {
+
+padding-top: 15%;
+
+}
+
+.footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                padding-top: 70px;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            img.parental {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 77px;
+            }
+
+            p.footertext {
+                padding-bottom: 0%;
+                padding-left: 0%;
+                padding-right: 0%;
+                font-size: 12px;
+            }
+                }
+         
+         </style>
+     </head>
+     <body>
+
+        <div class="header">
+            <a href="index.html"><img src="images/logo_setoGabes.png" alt="setoGabes" style="width: 200px;"></a>
+            <div class="burger-menu-btn"></div>
+        </div>
+    
+                    <!--burger menu start-->
+    
+                    <nav class="burger-menu">
+                        <ul>
+                            <li><a href="/music.html">Music</a></li>
+                            <li><a href="/dance.html">Dance</a></li>
+                            <li><a href="/artworks.html">Artworks</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/press.html">Press</a></li>
+                            <li><a href="/extras.html">Back to Extras</a></li>
+            
+            
+                    </ul>
+                    </nav>
+            
+                    <!--burger menu end-->
+ 
+            <a href="extras.html" title="Back to Extras"><img class="icoback" src="images/icoback.png" alt="Back to Extras"></a>
+ 
+             <p class="Titles">About this site</p>
+
+             <div class="textofida">
+             <p>This is not the first time I try to create a website. A hub to gather information about all the different things I dedicate myself to. I've had a blogspot, a tumblr, a wix page, and I hated them all. <br>
+            <br>
+            All of those were limited alternatives that ended up being more like a novelty instead of a proper space on the internet that I could claim as my own. This website exists because one day I found out about NeoCities, and fell in love with the concept. <br>
+            <br>
+            I knew nothing about HTML/CSS, but I gave it a shot with NeoCities' default simple tutorial/introduction to it, and ended up loving it. At the moment I'm writing this section, I still haven't properly "studied" any of this, but I sure have learned a lot. Trial and error, tutorials, etc. I'm by no means a pro when it comes to this, but I must say, this is way beyond my previous attempts, and I'm very proud of it! <br>
+            <br>
+            I fucking LOVE the old internet. I miss the creative websites, the personal spaces, the personality. It used to be fun and exciting. I'm so tired of all the algorithms and corporatism, all the ads, all the social media noise full of fake products, sold by fake people with fake lifestyles... <br>
+            <br>
+            This website started as a way to make everything related to my work accessible to everyone, but it also became my own space online. One that it's 100% MINE. So if you go beyond the professional layers, you will see that this website has a lot more to offer. <br>
+            <br>
+            Also, all my life I have been a fan of people that lived very very far from me. Artists who spoke different languages with region locked content. It's always a CHORE to know more about them, and I usually go above and beyond, like, I started learning japanese just because of Morning Musume because there's very little translated content of the first few generations of the group! <br>
+            <br>
+            I'm fully aware that not everyone has the time or means to go that far, so I'll do my best to translate everything between my native language and english, at least. In the unlikely case some kid from the other side of the globe vibes with me the same way I've vibed with Malaysian pop groups from the 90's, just because of a random internet thing, I want to make it easier on that kid's part. The internet's power to connect cultures is imense, and portuguese is a VERY difficult language to learn, so you're welcome! <br>
+            <br>
+            I hope this website is useful to you, and I hope you like my work. Thank you for visiting!</p>
+            </div>
+
+            <div class="navi">
+                <a href="#top" title="Back to Top"><img class="icotop" src="images/icotop.png" alt="Back to Top"></a>
+                </div> 
+
+            <div class="footer">
+                <p class="footertext"><img class="parental" style= "opacity:70%;" src="images/ParentalAdvisory.png" alt="Parental Advisory"><br>
+            Made by setoGabes + Hosted by NeoCities <br> Everyone is someone. <br> xx 2024 xx</p>
+        </div>
+        
+        <script src="/js/main.js"></script>
+            </body>
+ </html>
